@@ -1,0 +1,4 @@
+binary_label,motor_label,total,q1,q2,q3,q4,q5
+drone,2_motors,109,15,20,10,13,51
+drone,8_motors,20,0,2,3,3,12
+no_drone,none,6,6,0,0,0,0
