@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-segment_audio.py
-Segments audio into 2-second normalized clips and updates metadata.json.
-Supports local files or YouTube URLs.
-Includes audio preview, validated labeling, and manual quality scoring (1–5).
+segment_audio.py — v3
+Changes:
+ - Non-drone ("n") segments go to datasets/Drone_Audio_Dataset/audio/not_a_drone/
+ - Skip quality rating for non-drone segments
+ - When reprocessing same YouTube URL, ask to delete old data (segments + metadata)
 """
 
 import os
@@ -46,23 +47,18 @@ def is_url(path: str):
 
 
 def extract_youtube_id(url: str) -> str:
-    """Extract the YouTube video ID from any standard or Shorts URL."""
     parsed = urlparse(url)
     if "youtu.be" in parsed.netloc:
-        # Shortened youtu.be/VIDEO_ID
         return parsed.path.strip("/")
     elif "youtube.com" in parsed.netloc:
         if "watch" in parsed.path:
-            # Normal link
             return parse_qs(parsed.query).get("v", ["ytclip"])[0]
         elif "shorts" in parsed.path:
-            # Shorts link
             return parsed.path.split("/")[-1]
-    return "ytclip"  # Fallback
+    return "ytclip"
 
 
 def download_youtube_audio(url: str) -> tuple[Path, str]:
-    """Download YouTube audio (standard or Shorts) and convert to WAV (16kHz mono)."""
     vid_id = extract_youtube_id(url)
     tmp_wav = Path(tempfile.gettempdir()) / f"yt_audio_{vid_id}.wav"
     print(f"Downloading audio from YouTube: {url}")
@@ -74,11 +70,9 @@ def download_youtube_audio(url: str) -> tuple[Path, str]:
     return tmp_wav, vid_id
 
 
-
 def convert_to_wav(src_path: Path) -> Path:
-    """Ensure file is WAV mono 16kHz."""
     if src_path.suffix.lower() != ".wav":
-        tmp_wav = Path(tempfile.gettempdir()) / f"temp_audio.wav"
+        tmp_wav = Path(tempfile.gettempdir()) / "temp_audio.wav"
         subprocess.run([
             "ffmpeg", "-y", "-i", str(src_path),
             "-ac", "1", "-ar", "16000",
@@ -89,7 +83,6 @@ def convert_to_wav(src_path: Path) -> Path:
 
 
 def segment_wav(wav_path: Path, out_dir: Path, prefix: str) -> list:
-    """Segment, normalize, export segments."""
     audio = AudioSegment.from_wav(wav_path)
     segments = []
     for i, start in enumerate(range(0, len(audio) - SEG_LEN, STEP)):
@@ -103,7 +96,6 @@ def segment_wav(wav_path: Path, out_dir: Path, prefix: str) -> list:
 
 
 def play_audio(file_path: Path):
-    """Play audio segment in terminal using ffplay."""
     try:
         subprocess.run(
             ["ffplay", "-nodisp", "-autoexit", "-loglevel", "quiet", str(file_path)]
@@ -113,7 +105,6 @@ def play_audio(file_path: Path):
 
 
 def safe_load_metadata():
-    """Safely load metadata JSON (create if missing or invalid)."""
     if META_FILE.exists() and META_FILE.stat().st_size > 0:
         try:
             with open(META_FILE) as f:
@@ -125,7 +116,6 @@ def safe_load_metadata():
 
 
 def update_metadata(entries):
-    """Append new entries safely."""
     data = safe_load_metadata()
     data.extend(entries)
     META_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -133,10 +123,30 @@ def update_metadata(entries):
         json.dump(data, f, indent=2)
 
 
+def delete_existing_entries(url: str):
+    """Remove all metadata and audio files for a given YouTube URL."""
+    vid_id = extract_youtube_id(url)
+    data = safe_load_metadata()
+
+    # Filter out old entries
+    new_data = [d for d in data if d.get("youtube_url") != url]
+
+    # Delete matching audio files
+    for folder in BASE_OUT_DIR.rglob("*"):
+        if folder.is_file() and folder.name.startswith(vid_id):
+            try:
+                folder.unlink()
+            except Exception as e:
+                print(f"Could not delete {folder}: {e}")
+
+    with open(META_FILE, "w") as f:
+        json.dump(new_data, f, indent=2)
+    print(f"🗑️  Deleted old segments and metadata for {url}")
+
+
 # ---------- Main ----------
 
 def main():
-    # Input source (local file or YouTube)
     if len(sys.argv) > 1:
         src = sys.argv[1].strip()
     else:
@@ -145,18 +155,22 @@ def main():
     source_type = "youtube" if is_url(src) else "local"
     metadata = safe_load_metadata()
 
-    # Skip duplicate YouTube URLs
-    if source_type == "youtube":
-        if any(d.get("youtube_url") == src for d in metadata):
-            print("⚠️  This video has already been processed. Skipping.")
+    # --- Handle duplicate YouTube URLs ---
+    if source_type == "youtube" and any(d.get("youtube_url") == src for d in metadata):
+        ans = input("⚠️  This video has already been processed. Delete previous segments and reprocess? (y/n): ").strip().lower()
+        if ans == "y":
+            delete_existing_entries(src)
+        else:
+            print("Skipping reprocessing.")
             return
 
+    # --- Prepare WAV ---
+    if source_type == "youtube":
         wav_path, vid_id = download_youtube_audio(src)
         motor_count = input("Enter motor count (2/4/6/8 or unknown): ").strip()
         motor_label = f"{motor_count}_motors" if motor_count.isdigit() else "unknown"
         out_dir = BASE_OUT_DIR / motor_label
         prefix = f"{vid_id}_{motor_label}"
-
     else:
         src_path = Path(src)
         if not src_path.exists():
@@ -169,39 +183,53 @@ def main():
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # ---------- Segment ----------
+    # --- Segment audio ---
     seg_paths = segment_wav(wav_path, out_dir, prefix)
 
-    # ---------- Label manually ----------
     entries = []
     print("\nLabel each segment:")
     for p in seg_paths:
         print(f"\nFile: {p.name}")
-        play_audio(p)  # 🎧 Audio preview before labeling
+        play_audio(p)
 
-        # ✅ Binary label (drone / no_drone)
         while True:
             drone_present = input("  Drone present? (y/n): ").strip().lower()
             if drone_present in ("y", "n"):
                 break
             print("  ⚠️  Please type only 'y' or 'n'.")
 
-        binary_label = "drone" if drone_present == "y" else "no_drone"
-        motor_lbl = motor_label if drone_present == "y" else None
+        if drone_present == "y":
+            binary_label = "drone"
+            motor_lbl = motor_label
 
-        # ✅ Quality label (1–5)
-        while True:
-            q = input("  Quality (1–5): ").strip()
-            if q in ("1", "2", "3", "4", "5"):
-                quality = int(q)
-                break
-            print("  ⚠️  Please type a number 1–5.")
+            # Ask for quality only if drone is present
+            while True:
+                q = input("  Quality (1–5): ").strip()
+                if q in ("1", "2", "3", "4", "5"):
+                    quality = int(q)
+                    break
+                print("  ⚠️  Please type a number 1–5.")
+
+            final_dir = out_dir
+
+        else:
+            binary_label = "no_drone"
+            motor_lbl = None
+            quality = None
+
+            # Save in global not_a_drone folder
+            final_dir = BASE_OUT_DIR / "not_a_drone"
+            final_dir.mkdir(exist_ok=True)
+
+            new_path = final_dir / p.name
+            shutil.move(p, new_path)
+            p = new_path
 
         entries.append({
             "filename": p.name,
             "binary_label": binary_label,
             "motor_label": motor_lbl,
-            "quality": quality,
+            **({"quality": quality} if quality is not None else {}),
             "source": source_type,
             "youtube_url": src if source_type == "youtube" else None,
             "duration": SEG_LEN / 1000
