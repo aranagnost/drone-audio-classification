@@ -1,4 +1,4 @@
 binary_label,motor_label,total,q1,q2,q3,q4,q5
-drone,2_motors,235,28,19,54,45,89
+drone,2_motors,501,35,44,148,130,144
 drone,8_motors,20,0,0,5,1,14
-no_drone,none,26,0,0,0,0,0
+no_drone,none,81,0,0,0,0,0
