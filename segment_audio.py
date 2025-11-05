@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-segment_audio.py — v3
+segment_audio.py — v6
 Changes:
- - Non-drone ("n") segments go to datasets/Drone_Audio_Dataset/audio/not_a_drone/
- - Skip quality rating for non-drone segments
- - When reprocessing same YouTube URL, ask to delete old data (segments + metadata)
+ - Adds support for subcategories under "not_a_drone"
+   (wind, cars, motors, airplanes, birds, crowd, electronics, random)
+ - Displays short key-based menu for non-drone subtypes
+ - Stores "subtype" field in metadata.json
+ - Keeps same functionality for drone labeling and quality scoring
 """
 
 import os
@@ -13,12 +15,11 @@ import json
 import tempfile
 import subprocess
 import shutil
-import random
-import numpy as np
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 from pydub import AudioSegment
 from pydub.effects import normalize
+import random
 
 # ---------- CONFIG ----------
 SEG_LEN = 2000       # ms
@@ -35,7 +36,6 @@ YTDLP = shutil.which("yt-dlp")
 if not YTDLP:
     print("Warning: yt-dlp not found. You can only process local files.")
 
-
 # ---------- Helper Functions ----------
 
 def is_url(path: str):
@@ -44,7 +44,6 @@ def is_url(path: str):
         return all([result.scheme, result.netloc])
     except:
         return False
-
 
 def extract_youtube_id(url: str) -> str:
     parsed = urlparse(url)
@@ -57,7 +56,6 @@ def extract_youtube_id(url: str) -> str:
             return parsed.path.split("/")[-1]
     return "ytclip"
 
-
 def download_youtube_audio(url: str) -> tuple[Path, str]:
     vid_id = extract_youtube_id(url)
     tmp_wav = Path(tempfile.gettempdir()) / f"yt_audio_{vid_id}.wav"
@@ -69,7 +67,6 @@ def download_youtube_audio(url: str) -> tuple[Path, str]:
     ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return tmp_wav, vid_id
 
-
 def convert_to_wav(src_path: Path) -> Path:
     if src_path.suffix.lower() != ".wav":
         tmp_wav = Path(tempfile.gettempdir()) / "temp_audio.wav"
@@ -80,7 +77,6 @@ def convert_to_wav(src_path: Path) -> Path:
         ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         return tmp_wav
     return src_path
-
 
 def segment_wav(wav_path: Path, out_dir: Path, prefix: str) -> list:
     audio = AudioSegment.from_wav(wav_path)
@@ -94,7 +90,6 @@ def segment_wav(wav_path: Path, out_dir: Path, prefix: str) -> list:
         segments.append(fpath)
     return segments
 
-
 def play_audio(file_path: Path):
     try:
         subprocess.run(
@@ -102,7 +97,6 @@ def play_audio(file_path: Path):
         )
     except Exception:
         print("(Audio preview unavailable — ffplay not found)")
-
 
 def safe_load_metadata():
     if META_FILE.exists() and META_FILE.stat().st_size > 0:
@@ -114,7 +108,6 @@ def safe_load_metadata():
             return []
     return []
 
-
 def update_metadata(entries):
     data = safe_load_metadata()
     data.extend(entries)
@@ -122,27 +115,20 @@ def update_metadata(entries):
     with open(META_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
-
 def delete_existing_entries(url: str):
     """Remove all metadata and audio files for a given YouTube URL."""
     vid_id = extract_youtube_id(url)
     data = safe_load_metadata()
-
-    # Filter out old entries
     new_data = [d for d in data if d.get("youtube_url") != url]
-
-    # Delete matching audio files
     for folder in BASE_OUT_DIR.rglob("*"):
         if folder.is_file() and folder.name.startswith(vid_id):
             try:
                 folder.unlink()
             except Exception as e:
                 print(f"Could not delete {folder}: {e}")
-
     with open(META_FILE, "w") as f:
         json.dump(new_data, f, indent=2)
     print(f"🗑️  Deleted old segments and metadata for {url}")
-
 
 # ---------- Main ----------
 
@@ -155,7 +141,6 @@ def main():
     source_type = "youtube" if is_url(src) else "local"
     metadata = safe_load_metadata()
 
-    # --- Handle duplicate YouTube URLs ---
     if source_type == "youtube" and any(d.get("youtube_url") == src for d in metadata):
         ans = input("⚠️  This video has already been processed. Delete previous segments and reprocess? (y/n): ").strip().lower()
         if ans == "y":
@@ -185,8 +170,8 @@ def main():
 
     # --- Segment audio ---
     seg_paths = segment_wav(wav_path, out_dir, prefix)
-
     entries = []
+
     print("\nLabel each segment:")
     for p in seg_paths:
         print(f"\nFile: {p.name}")
@@ -202,7 +187,6 @@ def main():
             binary_label = "drone"
             motor_lbl = motor_label
 
-            # Ask for quality only if drone is present
             while True:
                 q = input("  Quality (1–5): ").strip()
                 if q in ("1", "2", "3", "4", "5"):
@@ -211,29 +195,58 @@ def main():
                 print("  ⚠️  Please type a number 1–5.")
 
             final_dir = out_dir
+            subtype = None
 
         else:
             binary_label = "no_drone"
             motor_lbl = None
             quality = None
 
-            # Save in global not_a_drone folder
-            final_dir = BASE_OUT_DIR / "not_a_drone"
-            final_dir.mkdir(exist_ok=True)
+            # --- subtype selection with short keys ---
+            options = {
+                "a": "airplanes",
+                "b": "birds",
+                "ca": "cars",
+                "cr": "crowd",
+                "e": "electronics",
+                "m": "motors",
+                "r": "random",
+                "w": "wind"
+            }
+
+            print("\nSelect subtype for non-drone sound:")
+            for k, v in options.items():
+                print(f"  {k} → {v}")
+
+            prompt = "Enter your choice (e.g., a, b, ca, cr, e, m, r, w): "
+            while True:
+                choice = input(prompt).strip().lower()
+                if choice in options:
+                    subtype = options[choice]
+                    break
+                print("⚠️  Invalid choice. Use one of the initials shown above.")
+
+            final_dir = BASE_OUT_DIR / "not_a_drone" / subtype
+            final_dir.mkdir(parents=True, exist_ok=True)
 
             new_path = final_dir / p.name
             shutil.move(p, new_path)
             p = new_path
 
-        entries.append({
+        entry = {
             "filename": p.name,
             "binary_label": binary_label,
             "motor_label": motor_lbl,
-            **({"quality": quality} if quality is not None else {}),
             "source": source_type,
             "youtube_url": src if source_type == "youtube" else None,
             "duration": SEG_LEN / 1000
-        })
+        }
+        if quality is not None:
+            entry["quality"] = quality
+        if binary_label == "no_drone":
+            entry["subtype"] = subtype
+
+        entries.append(entry)
 
     update_metadata(entries)
     print(f"\n✅ Created {len(entries)} segments and updated metadata.json")

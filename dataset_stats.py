@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """
-dataset_stats.py
+dataset_stats.py — v2
 Reads metadata.json and prints/saves dataset statistics:
-- Counts per binary_label and motor_label
+- Counts per binary_label, motor_label, and subtype
 - Quality distribution (1–5)
 - Totals per class
-- Optionally saves summary CSV
 """
 
 import json
@@ -33,22 +32,28 @@ def main():
     df["binary_label"] = df["binary_label"].fillna("unknown")
     df["motor_label"] = df["motor_label"].fillna("none")
     df["quality"] = df["quality"].fillna(0).astype(int)
+    if "subtype" not in df.columns:
+        df["subtype"] = "none"
+    else:
+        df["subtype"] = df["subtype"].fillna("none")
+
 
     # Count totals per label
     summary = []
-    for (binary_label, motor_label), group in df.groupby(["binary_label", "motor_label"]):
+    for (binary_label, motor_label, subtype), group in df.groupby(["binary_label", "motor_label", "subtype"]):
         counts = Counter(group["quality"])
         total = len(group)
         row = {
             "binary_label": binary_label,
             "motor_label": motor_label,
+            "subtype": subtype,
             "total": total,
             **{f"q{i}": counts.get(i, 0) for i in range(1, 6)}
         }
         summary.append(row)
 
     summary_df = pd.DataFrame(summary)
-    summary_df = summary_df.sort_values(["binary_label", "motor_label"]).reset_index(drop=True)
+    summary_df = summary_df.sort_values(["binary_label", "motor_label", "subtype"]).reset_index(drop=True)
 
     # Print summary
     print("\n=== Dataset Summary ===\n")
