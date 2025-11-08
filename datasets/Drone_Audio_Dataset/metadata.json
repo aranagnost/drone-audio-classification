@@ -5416,5 +5416,4784 @@
     "youtube_url": "https://www.youtube.com/watch?v=tsZDdXIjgkM",
     "duration": 2.0,
     "subtype": "random"
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_000.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_001.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_002.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_003.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_004.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_005.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "j4TTwLTY4fU_8_motors_006.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/j4TTwLTY4fU",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_000.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_001.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_002.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_003.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_004.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_005.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_006.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_007.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_008.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_009.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "ojrD_SZ7z1I_8_motors_010.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/ojrD_SZ7z1I",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_000.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_001.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_002.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_003.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_004.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_005.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_006.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_007.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_008.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_009.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_010.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_011.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_012.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_013.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "iSG2J2NRgVo_8_motors_014.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/shorts/iSG2J2NRgVo",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_000.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_001.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_002.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_003.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_004.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_005.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_006.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_007.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_008.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_009.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_010.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_011.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_012.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_013.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_014.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_015.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_016.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_017.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_018.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_019.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_020.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_021.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_022.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_023.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_024.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_025.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_026.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_027.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_028.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "F5MvH70OmLQ_8_motors_029.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=F5MvH70OmLQ",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_000.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "subtype": "wind"
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_001.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "subtype": "wind"
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_002.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_003.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "subtype": "wind"
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_004.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_005.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_006.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_007.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_008.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_009.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_010.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_011.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_012.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_013.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_014.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_015.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_016.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_017.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_018.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_019.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_020.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_021.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_022.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_023.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_024.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_025.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_026.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_027.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_028.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_029.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_030.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_031.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_032.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_033.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_034.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_035.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_036.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_037.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_038.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_039.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_040.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_041.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_042.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_043.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_044.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_045.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_046.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_047.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_048.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_049.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_050.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_051.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_052.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_053.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_054.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_055.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_056.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_057.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_058.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_059.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_060.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_061.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_062.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_063.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_064.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_065.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_066.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_067.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_068.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_069.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_070.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_071.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_072.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_073.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_074.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_075.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_076.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_077.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_078.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_079.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_080.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_081.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_082.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_083.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_084.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_085.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_086.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_087.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_088.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_089.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_090.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_091.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_092.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_093.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_094.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_095.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_096.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_097.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_098.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_099.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_100.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_101.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_102.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_103.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_104.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_105.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_106.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_107.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_108.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_109.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_110.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_111.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_112.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_113.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_114.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_115.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_116.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_117.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_118.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_119.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_120.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_121.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_122.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_123.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_124.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_125.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_126.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_127.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_128.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_129.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_130.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "fGrXsfqQTfI_8_motors_131.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=fGrXsfqQTfI",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_000.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_001.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_002.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_003.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_004.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_005.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_006.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_007.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_008.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_009.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_010.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_011.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_012.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_013.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_014.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_015.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_016.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_017.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_018.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_019.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_020.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_021.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_022.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_023.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_024.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_025.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_026.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_027.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_028.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_029.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_030.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_031.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_032.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_033.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_034.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_035.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_036.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_037.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_038.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_039.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_040.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_041.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_042.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_043.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_044.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_045.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_046.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_047.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_048.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_049.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_050.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_051.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_052.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_053.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_054.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_055.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_056.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_057.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_058.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_059.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_060.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_061.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_062.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_063.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_064.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_065.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_066.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_067.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_068.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_069.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_070.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_071.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_072.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_073.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_074.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_075.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_076.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_077.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_078.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_079.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_080.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_081.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_082.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_083.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_084.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_085.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_086.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_087.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_088.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_089.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_090.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_091.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_092.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_093.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_094.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_095.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_096.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_097.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_098.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_099.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_100.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_101.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_102.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_103.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_104.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_105.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_106.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_107.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_108.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_109.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_110.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_111.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_112.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_113.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_114.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_115.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_116.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_117.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_118.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_119.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_120.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_121.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_122.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_123.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_124.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_125.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_126.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_127.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_128.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_129.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_130.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_131.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_132.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_133.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_134.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_135.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_136.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_137.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_138.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_139.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_140.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_141.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_142.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_143.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_144.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_145.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_146.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_147.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_148.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_149.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_150.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_151.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_152.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_153.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_154.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_155.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_156.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_157.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_158.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_159.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "Rj0RFiLPPJc_8_motors_160.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=Rj0RFiLPPJc",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_000.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_001.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "birds"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_002.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_003.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_004.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_005.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_006.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_007.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_008.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_009.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_010.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_011.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_012.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_013.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_014.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_015.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_016.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_017.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_018.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_019.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "electronics"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_020.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_021.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_022.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_023.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_024.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_025.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_026.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_027.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_028.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_029.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_030.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_031.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_032.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_033.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_034.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_035.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_036.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_037.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_038.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_039.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_040.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_041.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_042.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_043.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_044.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_045.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_046.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_047.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_048.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_049.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_050.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_051.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_052.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_053.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_054.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_055.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_056.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_057.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_058.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_059.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_060.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_061.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_062.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_063.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_064.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_065.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_066.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_067.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_068.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_069.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_070.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_071.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_072.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_073.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_074.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_075.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_076.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_077.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_078.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_079.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_080.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_081.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_082.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_083.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_084.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_085.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_086.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_087.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_088.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_089.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_090.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_091.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_092.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_093.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_094.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_095.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_096.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_097.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_098.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_099.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_100.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_101.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_102.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_103.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_104.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_105.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_106.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_107.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_108.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_109.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_110.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_111.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_112.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_113.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_114.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_115.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_116.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_117.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_118.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_119.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_120.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_121.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_122.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_123.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_124.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_125.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_126.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_127.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_128.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_129.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_130.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_131.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_132.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_133.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_134.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_135.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_136.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_137.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_138.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_139.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_140.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 2
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_141.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_142.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_143.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_144.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_145.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_146.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_147.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_148.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_149.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_150.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_151.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_152.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_153.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 5
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_154.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 4
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_155.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 3
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_156.wav",
+    "binary_label": "drone",
+    "motor_label": "8_motors",
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "quality": 1
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_157.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_158.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_159.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_160.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_161.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "random"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_162.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_163.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_164.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_165.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_166.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_167.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_168.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_169.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_170.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_171.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_172.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_173.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
+  },
+  {
+    "filename": "0bV7F4sbA9Q_8_motors_174.wav",
+    "binary_label": "no_drone",
+    "motor_label": null,
+    "source": "youtube",
+    "youtube_url": "https://www.youtube.com/watch?v=0bV7F4sbA9Q",
+    "duration": 2.0,
+    "subtype": "crowd"
   }
 ]
