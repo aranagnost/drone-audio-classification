@@ -1,8 +1,9 @@
 binary_label,motor_label,subtype,total,q1,q2,q3,q4,q5
 drone,2_motors,none,500,35,43,153,126,143
-drone,8_motors,none,426,22,46,61,106,191
+drone,4_motors,none,578,51,243,82,43,159
+drone,8_motors,none,772,67,147,209,158,191
 no_drone,none,birds,1,0,0,0,0,0
-no_drone,none,crowd,33,0,0,0,0,0
-no_drone,none,electronics,1,0,0,0,0,0
-no_drone,none,random,169,0,0,0,0,0
-no_drone,none,wind,3,0,0,0,0,0
+no_drone,none,crowd,39,0,0,0,0,0
+no_drone,none,electronics,7,0,0,0,0,0
+no_drone,none,random,266,0,0,0,0,0
+no_drone,none,wind,11,0,0,0,0,0
