@@ -1,0 +1,50 @@
+# =========================
+# Private / local-only
+# =========================
+datasets/
+artifacts/
+report/
+docs/
+.idea/
+.vscode/
+
+# =========================
+# Audio + data files
+# =========================
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.csv
+
+# =========================
+# Model checkpoints / binaries
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# =========================
+# Python / tooling
+# =========================
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# =========================
+# Virtual envs
+# =========================
+.env
+.venv
+venv/
+env/
+conda-env/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
