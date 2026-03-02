@@ -7,6 +7,7 @@ report/
 docs/
 .idea/
 .vscode/
+.claude/
 
 # =========================
 # Audio + data files
@@ -16,6 +17,10 @@ docs/
 *.flac
 *.m4a
 *.csv
+
+# Un-ignore train/val/test split CSVs (small, needed for reproducibility)
+!ml/splits/*.csv
+!ml/splits_stage2/*.csv
 
 # =========================
 # Model checkpoints / binaries
@@ -48,3 +53,7 @@ conda-env/
 .DS_Store
 Thumbs.db
 
+# =========================
+# temp
+# =========================
+results/

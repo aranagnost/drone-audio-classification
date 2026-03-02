@@ -1,0 +1,18 @@
+{
+    "name": "Small CNN v3",
+    "model_class": "SmallCNNv3",
+    "description": "Same architecture as v2, trained with noise-mixing augmentation (speech, wind, etc.) for noise-robust drone detection.",
+    "stages": [
+        {
+            "name": "Drone Detection",
+            "checkpoint": "stage1_smallcnnv3.pt",
+            "labels": ["no_drone", "drone"]
+        },
+        {
+            "name": "Motor Classification",
+            "checkpoint": "stage2_smallcnnv3.pt",
+            "labels": ["2_motors", "4_motors", "6_motors", "8_motors"],
+            "run_if": {"stage": 0, "class": "drone", "threshold": 0.25}
+        }
+    ]
+}

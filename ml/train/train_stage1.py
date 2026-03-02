@@ -85,8 +85,7 @@ def main():
     args = ap.parse_args()
 
     set_seed(args.seed)
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"[INFO] Using device: {device}")
+    device = "cpu"
 
     cfg = AudioConfig()
     train_ds = AudioDataset(args.train_csv, task="stage1", cfg=cfg)

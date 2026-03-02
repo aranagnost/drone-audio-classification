@@ -1,0 +1,17 @@
+{
+    "name": "Small CNN v1",
+    "model_class": "SmallCNN",
+    "stages": [
+        {
+            "name": "Drone Detection",
+            "checkpoint": "stage1_smallcnn.pt",
+            "labels": ["no_drone", "drone"]
+        },
+        {
+            "name": "Motor Classification",
+            "checkpoint": "stage2_smallcnn.pt",
+            "labels": ["2_motors", "4_motors", "6_motors", "8_motors"],
+            "run_if": {"stage": 0, "class": "drone", "threshold": 0.25}
+        }
+    ]
+}

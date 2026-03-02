@@ -13,3 +13,4 @@ dependencies:
   - torchaudio
   - torchvision
   - tqdm
+  - flask

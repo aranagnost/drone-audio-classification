@@ -1,0 +1,29 @@
+{
+  "name": "3 Stages CNN v1",
+  "model_class": "ThreeStagesCNNv1",
+  "stages": [
+    {
+      "name": "Drone Detection",
+      "task": "stage1",
+      "num_classes": 2,
+      "labels": ["no_drone", "drone"],
+      "checkpoint": "stage1_3stages_cnnv1.pt"
+    },
+    {
+      "name": "Coarse Motor Classification",
+      "task": "stage2_coarse",
+      "num_classes": 3,
+      "labels": ["2_motors", "4or6_motors", "8_motors"],
+      "checkpoint": "stage2_3stages_cnnv1.pt"
+    },
+    {
+      "name": "Fine Motor Classification (4 vs 6)",
+      "task": "stage3",
+      "num_classes": 2,
+      "labels": ["4_motors", "6_motors"],
+      "checkpoint": "stage3_3stages_cnnv1.pt",
+      "stage2_trigger_class": 1,
+      "stage2_trigger_threshold": 0.65
+    }
+  ]
+}
