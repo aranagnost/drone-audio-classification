@@ -1,0 +1,35 @@
+{
+  "stage1": {
+    "model_class": "ThreeStagesCNNv1",
+    "optimizer": "adamw",
+    "lr": 8e-4,
+    "weight_decay": 1e-4,
+    "label_smoothing": 0.05,
+    "dropout": 0.2,
+    "epochs": 30,
+    "freq_mask": 8,
+    "time_mask": 16,
+    "noise_mix_prob": 0.7,
+    "snr_low": 0.0,
+    "snr_high": 20.0,
+    "gain_jitter_db": 6.0,
+    "use_macro_f1": true
+  },
+  "stage2": {
+    "model_class": "ThreeStagesCNNv1",
+    "task": "stage2_coarse",
+    "optimizer": "adamw",
+    "lr": 8e-4,
+    "weight_decay": 1e-3,
+    "label_smoothing": 0.05,
+    "dropout": 0.4,
+    "epochs": 40,
+    "freq_mask": 8,
+    "time_mask": 16,
+    "noise_mix_prob": 0.7,
+    "snr_low": 5.0,
+    "snr_high": 20.0,
+    "gain_jitter_db": 6.0,
+    "min_quality": 3
+  }
+}

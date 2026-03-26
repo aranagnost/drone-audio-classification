@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
-DATASET_DIR = BASE_DIR / "datasets" / "Drone_Audio_Dataset"
+DATASET_DIR = BASE_DIR / ".." / "datasets" / "Drone_Audio_Dataset"
 AUDIO_DIR = DATASET_DIR / "audio"
 META_FILE = DATASET_DIR / "metadata.json"
 

@@ -32,6 +32,7 @@ QUEUE_DIR = PROJECT_ROOT / "datasets" / "Drone_Audio_Dataset" / "review_queue"
 QUEUE_META = QUEUE_DIR / "queue.json"
 DATASET_AUDIO = PROJECT_ROOT / "datasets" / "Drone_Audio_Dataset" / "audio"
 DATASET_META = PROJECT_ROOT / "datasets" / "Drone_Audio_Dataset" / "metadata.json"
+BLOCKLIST_FILE = PROJECT_ROOT / "datasets" / "Drone_Audio_Dataset" / "blocklist.json"
 CHECKPOINT = PROJECT_ROOT / "artifacts" / "checkpoints" / "stage1_3stages_cnnv1.pt"
 
 SEG_DURATION = 2.0  # seconds — matches training config
@@ -193,16 +194,19 @@ def extract_youtube_id(url: str) -> str:
     return "ytclip"
 
 
-def search_youtube(query: str, max_results: int) -> list[str]:
+def search_youtube(query: str, max_results: int, max_duration_s: int | None = None) -> list[str]:
     if not YTDLP:
         return []
-    result = subprocess.run(
-        [YTDLP, f"ytsearch{max_results}:{query}",
-         "--get-url", "--get-id", "--flat-playlist", "--no-warnings"],
-        capture_output=True, text=True,
-    )
-    ids = [line.strip() for line in result.stdout.strip().splitlines() if line.strip()]
-    return [f"https://www.youtube.com/watch?v={vid_id}" for vid_id in ids if len(vid_id) == 11]
+    cmd = [YTDLP, f"ytsearch{max_results}:{query}",
+           "--print", "%(id)s", "--flat-playlist", "--no-warnings"]
+    if max_duration_s is not None:
+        cmd += ["--match-filter", f"duration <= {max_duration_s}"]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    return [
+        f"https://www.youtube.com/watch?v={line.strip()}"
+        for line in result.stdout.strip().splitlines()
+        if len(line.strip()) == 11
+    ]
 
 
 def download_youtube_audio(url: str, log) -> tuple[Path, str]:
@@ -270,14 +274,29 @@ def parse_time_range(s: str) -> tuple[int, int]:
     return _parse_time(left), _parse_time(right)
 
 
+def youtube_video_id(url: str) -> str | None:
+    """Return the bare video ID for any YouTube URL format, or None if not YouTube."""
+    vid_id = extract_youtube_id(url)
+    return vid_id if vid_id != "ytclip" else None
+
+
 def build_known_sources() -> set[str]:
     known: set[str] = set()
     for e in load_queue():
-        known.add(e.get("source_ref", ""))
+        ref = e.get("source_ref", "")
+        if ref:
+            known.add(ref)
+            vid_id = youtube_video_id(ref) if is_url(ref) else None
+            if vid_id:
+                known.add(vid_id)
     for e in load_dataset_metadata():
-        known.add(e.get("youtube_url", ""))
-        known.add(e.get("local_path", ""))
-    known.discard("")
+        for key in ("youtube_url", "local_path"):
+            ref = e.get(key, "")
+            if ref:
+                known.add(ref)
+                vid_id = youtube_video_id(ref) if is_url(ref) else None
+                if vid_id:
+                    known.add(vid_id)
     return known
 
 
@@ -407,6 +426,22 @@ def save_dataset_metadata(data: list[dict]):
     DATASET_META.parent.mkdir(parents=True, exist_ok=True)
     with open(DATASET_META, "w") as f:
         json.dump(data, f, indent=2)
+
+
+def load_blocklist() -> set[str]:
+    if BLOCKLIST_FILE.exists() and BLOCKLIST_FILE.stat().st_size > 0:
+        try:
+            with open(BLOCKLIST_FILE) as f:
+                return set(json.load(f))
+        except json.JSONDecodeError:
+            return set()
+    return set()
+
+
+def save_blocklist(data: set[str]):
+    BLOCKLIST_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(BLOCKLIST_FILE, "w") as f:
+        json.dump(sorted(data), f, indent=2)
 
 
 def cleanup_empty_dirs():
@@ -560,6 +595,49 @@ def api_bulk_discard():
     return jsonify({"ok": True, "deleted": len(to_delete), "remaining": len(queue)})
 
 
+@app.route("/api/bulk_accept", methods=["POST"])
+def api_bulk_accept():
+    body = request.get_json(force=True)
+    source_id = body["source_id"]
+    motor_label = body["motor_label"]
+    quality = int(body["quality"])
+
+    queue = load_queue()
+    to_move = [e for e in queue if e["source_id"] == source_id]
+
+    dest_dir = DATASET_AUDIO / motor_label
+    dest_dir.mkdir(parents=True, exist_ok=True)
+
+    ds_meta = load_dataset_metadata()
+    moved = 0
+    for entry in to_move:
+        seg_path = QUEUE_DIR / entry["source_id"] / entry["filename"]
+        if not seg_path.exists():
+            continue
+        shutil.move(str(seg_path), str(dest_dir / entry["filename"]))
+        meta_entry = {
+            "filename": entry["filename"],
+            "binary_label": "drone",
+            "motor_label": motor_label,
+            "quality": quality,
+            "source": entry["source_type"],
+            "duration": SEG_DURATION,
+        }
+        if entry["source_type"] == "youtube":
+            meta_entry["youtube_url"] = entry["source_ref"]
+        else:
+            meta_entry["local_path"] = entry["source_ref"]
+        ds_meta.append(meta_entry)
+        moved += 1
+    save_dataset_metadata(ds_meta)
+
+    queue = [e for e in queue if e["source_id"] != source_id]
+    save_queue(queue)
+    cleanup_empty_dirs()
+
+    return jsonify({"ok": True, "moved": moved, "remaining": len(queue)})
+
+
 @app.route("/api/bulk_nodrone", methods=["POST"])
 def api_bulk_nodrone():
     body = request.get_json(force=True)
@@ -617,6 +695,14 @@ def api_empty_queue():
     return jsonify({"ok": True, "deleted": len(queue)})
 
 
+@app.route("/api/subtypes")
+def api_subtypes():
+    nodrone_dir = DATASET_AUDIO / "not_a_drone"
+    subtypes = sorted(p.name for p in nodrone_dir.iterdir() if p.is_dir()) \
+               if nodrone_dir.exists() else []
+    return jsonify(subtypes)
+
+
 @app.route("/api/stats")
 def api_stats():
     queue = load_queue()
@@ -628,10 +714,20 @@ def api_stats():
         label = e.get("motor_label") or e.get("binary_label", "unknown")
         class_counts[label] = class_counts.get(label, 0) + 1
 
+    # queue counts by motor_hint
+    hint_counts: dict = {"2_motors": 0, "4_motors": 0, "6_motors": 0, "8_motors": 0, "no_hint": 0}
+    for e in queue:
+        h = e.get("motor_hint") or ""
+        if h in hint_counts:
+            hint_counts[h] += 1
+        else:
+            hint_counts["no_hint"] += 1
+
     return jsonify({
         "queue_size": len(queue),
         "dataset_total": len(ds_meta),
         "class_counts": class_counts,
+        "queue_hint_counts": hint_counts,
     })
 
 
@@ -644,9 +740,50 @@ def api_discover_info():
     })
 
 
+@app.route("/api/skip_source", methods=["POST"])
+def api_skip_source():
+    body = request.get_json(force=True)
+    url = body.get("url", "").strip()
+    skipped = body.get("skipped", True)
+    if not url:
+        return jsonify({"error": "No URL provided"}), 400
+    vid_id = youtube_video_id(url) if is_url(url) else url
+    if not vid_id:
+        return jsonify({"error": "Could not extract video ID"}), 400
+    blocklist = load_blocklist()
+    if skipped:
+        blocklist.add(vid_id)
+    else:
+        blocklist.discard(vid_id)
+    save_blocklist(blocklist)
+    return jsonify({"ok": True, "skipped": skipped, "id": vid_id})
+
+
+def _search_bg(job_id: str, query: str, count: int):
+    def _is_known_or_blocked(url, known, blocklist):
+        if url in known:
+            return True
+        vid_id = youtube_video_id(url)
+        return bool(vid_id and (vid_id in known or vid_id in blocklist))
+
+    try:
+        known    = build_known_sources()
+        blocklist = load_blocklist()
+        raw_urls = search_youtube(query, count * 5, max_duration_s=3 * 3600)
+        all_new  = [u for u in raw_urls if not _is_known_or_blocked(u, known, blocklist)]
+        skipped  = len(raw_urls) - len(all_new)
+        with _jobs_lock:
+            _jobs[job_id]["status"] = "done"
+            _jobs[job_id]["result"] = {"urls": all_new[:count], "skipped_known": skipped}
+    except Exception as e:
+        with _jobs_lock:
+            _jobs[job_id]["status"] = "error"
+            _jobs[job_id]["logs"].append(str(e))
+
+
 @app.route("/api/search_youtube", methods=["POST"])
 def api_search_youtube():
-    body = request.get_json(force=True)
+    body  = request.get_json(force=True)
     query = body.get("query", "").strip()
     count = int(body.get("count", 5))
     if not query:
@@ -654,12 +791,11 @@ def api_search_youtube():
     if not YTDLP:
         return jsonify({"error": "yt-dlp not installed"}), 500
 
-    known = build_known_sources()
-    raw_urls = search_youtube(query, count * 3)
-    all_new = [u for u in raw_urls if u not in known]
-    skipped = len(raw_urls) - len(all_new)
-    new_urls = all_new[:count]
-    return jsonify({"urls": new_urls, "skipped_known": skipped})
+    job_id = str(uuid.uuid4())
+    with _jobs_lock:
+        _jobs[job_id] = {"status": "running", "logs": [], "result": None}
+    threading.Thread(target=_search_bg, args=(job_id, query, count), daemon=True).start()
+    return jsonify({"job_id": job_id})
 
 
 @app.route("/api/process_url", methods=["POST"])
@@ -668,7 +804,7 @@ def api_process_url():
     source = body.get("url", "").strip()
     ranges_raw = body.get("ranges", "").strip()
     motor = body.get("motor")
-    threshold = float(body.get("threshold", 0.3))
+    threshold = float(body.get("threshold", 0.0))
 
     if not source:
         return jsonify({"error": "No URL or path provided"}), 400
@@ -678,7 +814,8 @@ def api_process_url():
     # Check for duplicates (resolve local paths for comparison)
     known = build_known_sources()
     ref = source if is_url(source) else str(Path(source).resolve())
-    if ref in known:
+    vid_id = youtube_video_id(source) if is_url(source) else None
+    if ref in known or (vid_id and vid_id in known):
         return jsonify({"error": "Already processed. Remove from queue/dataset first to reprocess."}), 409
 
     motor_label = f"{motor}_motors" if motor else None
@@ -997,8 +1134,58 @@ audio {
   white-space: nowrap;
 }
 .source-header .bulk-btn:hover { color: var(--text); border-color: var(--text); }
+.source-header .bulk-btn.bulk-accept:hover { color: var(--green); border-color: var(--green); }
 .source-header .bulk-btn.bulk-discard:hover { color: var(--red); border-color: var(--red); }
 .source-header .bulk-btn.bulk-nodrone:hover { color: var(--orange); border-color: var(--orange); }
+
+/* ── bulk accept picker (dropdown under source header) ── */
+.bulk-accept-picker {
+  padding: 6px 14px 10px;
+  background: rgba(76,175,80,0.06);
+  border-bottom: 1px solid var(--green);
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bulk-accept-picker .bulk-acc-label {
+  font-size: 11px;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-right: 2px;
+}
+.bulk-accept-picker .bulk-acc-btn {
+  padding: 3px 10px;
+  font-size: 11px;
+  border-radius: 4px;
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+  cursor: pointer;
+}
+.bulk-accept-picker .bulk-acc-btn:hover,
+.bulk-accept-picker .bulk-acc-btn.selected { background: var(--green); color: #fff; }
+.bulk-accept-picker .bulk-acc-sep {
+  color: var(--text-dim);
+  font-size: 11px;
+  margin: 0 4px;
+}
+.bulk-accept-picker .bulk-acc-confirm {
+  padding: 3px 14px;
+  font-size: 11px;
+  border-radius: 4px;
+  border: none;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.bulk-accept-picker .bulk-acc-confirm.ready {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ── bulk nodrone subtype picker (dropdown under source header) ── */
 .bulk-subtype-picker {
@@ -1181,7 +1368,7 @@ kbd {
 
 <div class="stats-bar">
   <h1>Drone Audio Review</h1>
-  <div class="stat">Queue: <b id="stat-queue">-</b></div>
+  <div class="stat">Queue: <b id="stat-queue">-</b> <span id="stat-queue-hints" style="font-size:12px;color:#aaa;margin-left:6px;"></span></div>
   <div class="stat">Dataset: <b id="stat-dataset">-</b></div>
   <div class="stat" id="stat-classes"></div>
   <button class="btn discard" id="btn-empty-queue" style="padding:6px 14px;font-size:12px;">Empty Queue</button>
@@ -1242,17 +1429,7 @@ kbd {
 
       <div class="nodrone-panel hidden" id="nodrone-panel">
         <label>Select subtype</label>
-        <div class="btn-row" id="subtype-btns">
-          <button class="btn subtype-btn" data-subtype="airplanes">Airplanes</button>
-          <button class="btn subtype-btn" data-subtype="birds">Birds</button>
-          <button class="btn subtype-btn" data-subtype="cars">Cars</button>
-          <button class="btn subtype-btn" data-subtype="crowd">Crowd</button>
-          <button class="btn subtype-btn" data-subtype="electronics">Electronics</button>
-          <button class="btn subtype-btn" data-subtype="motors">Motors</button>
-          <button class="btn subtype-btn" data-subtype="random">Random</button>
-          <button class="btn subtype-btn" data-subtype="speech">Speech</button>
-          <button class="btn subtype-btn" data-subtype="wind">Wind</button>
-        </div>
+        <div class="btn-row" id="subtype-btns"></div>
       </div>
 
       <div class="kbd-hints">
@@ -1289,7 +1466,7 @@ kbd {
       <span style="color:var(--text)">Motor hint</span> &mdash;
       Pre-fills the motor class during review (2/4/6/8 motors, or Any).<br>
       <span style="color:var(--text)">Threshold</span> &mdash;
-      Minimum P(drone) to keep a segment (default 0.3). Lower = more segments, higher = fewer but higher confidence.
+      Minimum P(drone) to keep a segment (default 0.0). Lower = more segments, higher = fewer but higher confidence.
     </div>
   </div>
 
@@ -1306,7 +1483,7 @@ kbd {
     </div>
     <div class="form-row">
       <span class="small-label">Threshold:</span>
-      <input type="number" id="disc-threshold" value="0.3" min="0" max="1" step="0.05">
+      <input type="number" id="disc-threshold" value="0.0" min="0" max="1" step="0.05">
     </div>
   </div>
 
@@ -1417,13 +1594,43 @@ kbd {
   async function loadStats() {
     const s = await fetchJSON('/api/stats');
     document.getElementById('stat-queue').textContent = s.queue_size;
+    const h = s.queue_hint_counts || {};
+    const hParts = [['2_motors','2M'],['4_motors','4M'],['6_motors','6M'],['8_motors','8M']]
+      .filter(([k]) => h[k]).map(([k,lbl]) => lbl + ':' + h[k]);
+    if (h.no_hint) hParts.push('–:' + h.no_hint);
+    document.getElementById('stat-queue-hints').textContent = hParts.length ? '(' + hParts.join('  ') + ')' : '';
     document.getElementById('stat-dataset').textContent = s.dataset_total;
     const classEl = document.getElementById('stat-classes');
     const parts = Object.entries(s.class_counts).map(([k, v]) => k + ': ' + v);
     classEl.innerHTML = parts.length ? parts.join(' &nbsp;|&nbsp; ') : '';
   }
 
-  const SUBTYPES = ['airplanes','birds','cars','crowd','electronics','motors','random','speech','wind'];
+  let SUBTYPES = [];
+
+  function subtypeLabel(s) {
+    return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  async function loadSubtypes() {
+    SUBTYPES = await fetchJSON('/api/subtypes');
+    const container = document.getElementById('subtype-btns');
+    container.innerHTML = SUBTYPES.map(s =>
+      '<button class="btn subtype-btn" data-subtype="' + s + '">' + subtypeLabel(s) + '</button>'
+    ).join('');
+    container.querySelectorAll('.subtype-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if (selectedIdx < 0) return;
+        const entry = queue[selectedIdx];
+        await fetchJSON('/api/accept_nodrone', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ filename: entry.filename, source_id: entry.source_id, subtype: btn.dataset.subtype }),
+        });
+        toast('Classified as not_a_drone/' + btn.dataset.subtype, 'success');
+        afterAction();
+      });
+    });
+  }
 
   function renderQueue() {
     document.getElementById('queue-count').textContent = queue.length + ' segments';
@@ -1444,11 +1651,65 @@ kbd {
       header.className = 'source-header';
       header.innerHTML =
         '<span class="source-name">' + esc(group.source_id) + ' (' + group.items.length + ')</span>' +
+        '<button class="bulk-btn bulk-accept">Accept all</button>' +
         '<button class="bulk-btn bulk-nodrone">All not-drone</button>' +
         '<button class="bulk-btn bulk-discard">Discard all</button>';
 
       const btnBulkDiscard = header.querySelector('.bulk-discard');
       const btnBulkNodrone = header.querySelector('.bulk-nodrone');
+      const btnBulkAccept = header.querySelector('.bulk-accept');
+
+      btnBulkAccept.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const existing = header.nextElementSibling;
+        if (existing && existing.classList.contains('bulk-accept-picker')) {
+          existing.remove();
+          return;
+        }
+        // close nodrone picker if open
+        const nodroneExisting = header.nextElementSibling;
+        if (nodroneExisting && nodroneExisting.classList.contains('bulk-subtype-picker')) {
+          nodroneExisting.remove();
+        }
+        const MOTORS = ['2_motors','4_motors','6_motors','8_motors'];
+        const QUALITIES = [1,2,3,4,5];
+        let pickerMotor = null;
+        let pickerQuality = null;
+        const picker = document.createElement('div');
+        picker.className = 'bulk-accept-picker';
+        picker.innerHTML =
+          '<span class="bulk-acc-label">Motor:</span>' +
+          MOTORS.map(m => '<button class="bulk-acc-btn" data-motor="' + m + '">' + m.replace('_motors',' M') + '</button>').join('') +
+          '<span class="bulk-acc-sep">|</span>' +
+          '<span class="bulk-acc-label">Quality:</span>' +
+          QUALITIES.map(q => '<button class="bulk-acc-btn" data-quality="' + q + '">' + q + '</button>').join('') +
+          '<span class="bulk-acc-sep">|</span>' +
+          '<button class="bulk-acc-confirm" id="bulk-acc-confirm-' + group.source_id + '">Confirm</button>';
+        const confirmBtn = picker.querySelector('.bulk-acc-confirm');
+        function updateConfirm() {
+          confirmBtn.classList.toggle('ready', !!(pickerMotor && pickerQuality));
+        }
+        picker.querySelectorAll('[data-motor]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            pickerMotor = btn.dataset.motor;
+            picker.querySelectorAll('[data-motor]').forEach(b => b.classList.toggle('selected', b === btn));
+            updateConfirm();
+          });
+        });
+        picker.querySelectorAll('[data-quality]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            pickerQuality = parseInt(btn.dataset.quality);
+            picker.querySelectorAll('[data-quality]').forEach(b => b.classList.toggle('selected', b === btn));
+            updateConfirm();
+          });
+        });
+        confirmBtn.addEventListener('click', () => {
+          if (!pickerMotor || !pickerQuality) return;
+          doBulkAccept(group.source_id, pickerMotor, pickerQuality, group.items.length);
+          picker.remove();
+        });
+        header.after(picker);
+      });
 
       btnBulkDiscard.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -1463,10 +1724,14 @@ kbd {
           existing.remove();
           return;
         }
+        // close accept picker if open
+        if (existing && existing.classList.contains('bulk-accept-picker')) {
+          existing.remove();
+        }
         const picker = document.createElement('div');
         picker.className = 'bulk-subtype-picker';
         picker.innerHTML = '<span class="bulk-sub-label">Subtype:</span>' +
-          SUBTYPES.map(s => '<button class="bulk-sub-btn" data-subtype="' + s + '">' + s + '</button>').join('');
+          SUBTYPES.map(s => '<button class="bulk-sub-btn" data-subtype="' + s + '">' + subtypeLabel(s) + '</button>').join('');
         picker.querySelectorAll('.bulk-sub-btn').forEach(btn => {
           btn.addEventListener('click', () => {
             doBulkNodrone(group.source_id, btn.dataset.subtype, group.items.length);
@@ -1495,6 +1760,16 @@ kbd {
     if (queue.length === 0) {
       showEmpty('Queue is empty — all segments reviewed!');
     }
+  }
+
+  async function doBulkAccept(sourceId, motorLabel, quality, count) {
+    await fetchJSON('/api/bulk_accept', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ source_id: sourceId, motor_label: motorLabel, quality: quality }),
+    });
+    toast(count + ' segments -> ' + motorLabel + ' q=' + quality, 'success');
+    afterAction();
   }
 
   async function doBulkDiscard(sourceId) {
@@ -1636,23 +1911,6 @@ kbd {
     nodronePanel.classList.toggle('hidden');
   });
 
-  document.querySelectorAll('.subtype-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      if (selectedIdx < 0) return;
-      const entry = queue[selectedIdx];
-      await fetchJSON('/api/accept_nodrone', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          filename: entry.filename,
-          source_id: entry.source_id,
-          subtype: btn.dataset.subtype,
-        }),
-      });
-      toast('Classified as not_a_drone/' + btn.dataset.subtype, 'success');
-      afterAction();
-    });
-  });
 
   async function afterAction() {
     audioPlayer.pause();
@@ -1727,7 +1985,7 @@ kbd {
   function getDiscoverSettings() {
     return {
       motor: discoverMotor || null,
-      threshold: parseFloat(document.getElementById('disc-threshold').value) || 0.3,
+      threshold: (() => { const t = parseFloat(document.getElementById('disc-threshold').value); return isNaN(t) ? 0.0 : t; })(),
     };
   }
 
@@ -1758,6 +2016,8 @@ kbd {
   const btnSearch = document.getElementById('btn-search');
   btnSearch.addEventListener('click', doSearch);
 
+  let searchPollTimer = null;
+
   async function doSearch() {
     const query = document.getElementById('disc-search-query').value.trim();
     const count = parseInt(document.getElementById('disc-search-count').value) || 5;
@@ -1765,23 +2025,34 @@ kbd {
     if (currentJobId) { toast('A job is already running', 'error'); return; }
 
     btnSearch.disabled = true;
-    btnSearch.textContent = 'Searching...';
+    btnSearch.textContent = 'Searching…';
     try {
       const data = await fetchJSON('/api/search_youtube', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ query, count }),
       });
-      if (data.error) { toast(data.error, 'error'); return; }
-      if (data.skipped_known > 0) {
-        toast(data.skipped_known + ' already-processed videos filtered out', 'success');
-      }
-      showSearchResults(data.urls);
+      if (data.error) { toast(data.error, 'error'); btnSearch.disabled = false; btnSearch.textContent = 'Search'; return; }
+      const jobId = data.job_id;
+      searchPollTimer = setInterval(async () => {
+        try {
+          const status = await fetchJSON('/api/job_status/' + jobId);
+          if (status.status === 'done') {
+            clearInterval(searchPollTimer); searchPollTimer = null;
+            btnSearch.disabled = false; btnSearch.textContent = 'Search';
+            if (status.result.skipped_known > 0)
+              toast(status.result.skipped_known + ' already-processed videos filtered out', 'success');
+            showSearchResults(status.result.urls);
+          } else if (status.status === 'error') {
+            clearInterval(searchPollTimer); searchPollTimer = null;
+            btnSearch.disabled = false; btnSearch.textContent = 'Search';
+            toast('Search failed', 'error');
+          }
+        } catch(e) {}
+      }, 1500);
     } catch (e) {
       toast('Search failed: ' + e.message, 'error');
-    } finally {
-      btnSearch.disabled = false;
-      btnSearch.textContent = 'Search';
+      btnSearch.disabled = false; btnSearch.textContent = 'Search';
     }
   }
 
@@ -1814,6 +2085,11 @@ kbd {
         row.querySelector('.sr-process').disabled = skipped;
         row.querySelector('.sr-ranges').disabled = skipped;
         this.textContent = skipped ? 'Unskip' : 'Skip';
+        fetchJSON('/api/skip_source', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ url: url, skipped: skipped }),
+        });
       });
       list.appendChild(row);
     });
@@ -1903,6 +2179,7 @@ kbd {
   }
 
   // ── init ──
+  loadSubtypes();
   loadQueue();
 })();
 </script>

@@ -1,0 +1,34 @@
+{
+  "stage1": {
+    "model_class": "SmallCNN",
+    "optimizer": "adam",
+    "lr": 1e-3,
+    "weight_decay": 0.0,
+    "label_smoothing": 0.0,
+    "dropout": 0.0,
+    "epochs": 15,
+    "freq_mask": 0,
+    "time_mask": 0,
+    "noise_mix_prob": 0.0,
+    "snr_low": 0.0,
+    "snr_high": 20.0,
+    "gain_jitter_db": 0.0,
+    "use_macro_f1": false
+  },
+  "stage2": {
+    "model_class": "SmallCNN",
+    "optimizer": "adam",
+    "lr": 1e-3,
+    "weight_decay": 0.0,
+    "label_smoothing": 0.0,
+    "dropout": 0.0,
+    "epochs": 20,
+    "freq_mask": 0,
+    "time_mask": 0,
+    "noise_mix_prob": 0.0,
+    "snr_low": 0.0,
+    "snr_high": 20.0,
+    "gain_jitter_db": 0.0,
+    "min_quality": 3
+  }
+}
