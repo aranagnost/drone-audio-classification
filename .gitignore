@@ -19,8 +19,9 @@ docs/
 *.csv
 
 # Un-ignore train/val/test split CSVs (small, needed for reproducibility)
-!ml/splits/*.csv
-!ml/splits_stage2/*.csv
+!data/splits/*.csv
+!data/splits_stage2/*.csv
+!data/splits_stage3/*.csv
 
 # =========================
 # Model checkpoints / binaries
