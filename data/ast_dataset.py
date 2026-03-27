@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import os
 import random
 from pathlib import Path
 from typing import Optional, Dict, Any, List, Tuple
@@ -137,10 +138,15 @@ class ASTAudioDataset(Dataset):
             h = hashlib.md5(fp.encode()).hexdigest()
             cache_file = self.cache_dir / f"{h}.pt"
             if cache_file.exists():
-                x = torch.load(cache_file, weights_only=True)
+                try:
+                    x = torch.load(cache_file, weights_only=True)
+                except Exception:
+                    x = self._compute_features(fp)
             else:
                 x = self._compute_features(fp)
-                torch.save(x, cache_file)
+                tmp = cache_file.with_suffix(".tmp")
+                torch.save(x, tmp)
+                os.replace(tmp, cache_file)
         else:
             x = self._compute_features(fp)
 
