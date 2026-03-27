@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import json
 import warnings
 from pathlib import Path
 
@@ -19,26 +20,36 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MODELS_DIR = PROJECT_ROOT / "models"
 
 
-def load_model_from_checkpoint(path: str, model_dir: Path, num_classes: int, dropout: float = 0.0):
+def load_model_from_checkpoint(path: str, model_dir: Path, num_classes: int,
+                               dropout: float = 0.0, stage: str = "stage1"):
     ckpt = torch.load(path, map_location="cpu", weights_only=False)
     cfg = AudioConfig(**ckpt["cfg"])
-    model_py = model_dir / "model.py"
+
+    # Resolve model_class and model_py from checkpoint, then train_config.json, then error
+    model_class_name = ckpt.get("model_class", None)
+    model_source = None
+
+    if not model_class_name:
+        cfg_path = model_dir / "train_config.json"
+        if cfg_path.exists():
+            with open(cfg_path) as f:
+                train_cfg = json.load(f)
+            stage_cfg = train_cfg.get(stage, {})
+            model_class_name = stage_cfg.get("model_class", None)
+            model_source = stage_cfg.get("model_source", None)
+
+    if not model_class_name:
+        raise ValueError(
+            f"Cannot determine model class for {path}. "
+            f"Add 'model_class' to train_config.json['{stage}']."
+        )
+
+    src_dir = MODELS_DIR / model_source if model_source else model_dir
+    model_py = src_dir / "model.py"
     spec = importlib.util.spec_from_file_location("model_mod", str(model_py))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    # Pick first class in the module that has num_classes in its __init__ signature
-    # (SmallCNN, SmallCNNv2, etc.) — user can override via --model_class if needed
-    model_class_name = ckpt.get("model_class", None)
-    if model_class_name:
-        ModelClass = getattr(mod, model_class_name)
-    else:
-        # Guess: pick the first nn.Module subclass defined in the file
-        import torch.nn as nn
-        candidates = [v for k, v in vars(mod).items()
-                      if isinstance(v, type) and issubclass(v, nn.Module) and v is not nn.Module]
-        if not candidates:
-            raise ValueError(f"No nn.Module subclass found in {model_py}")
-        ModelClass = candidates[0]
+    ModelClass = getattr(mod, model_class_name)
     model = ModelClass(num_classes=num_classes, dropout=dropout)
     model.load_state_dict(ckpt["model_state"])
     model.eval()
@@ -83,7 +94,7 @@ def main():
         args.stage2_ckpt = f"artifacts/checkpoints/stage2_{args.model}.pt"
 
     # Stage 1
-    m1, cfg1 = load_model_from_checkpoint(args.stage1_ckpt, model_dir, num_classes=2)
+    m1, cfg1 = load_model_from_checkpoint(args.stage1_ckpt, model_dir, num_classes=2, stage="stage1")
     ds1 = AudioDataset(args.test_csv, task="stage1", cfg=cfg1, dataset_root=args.dataset_root)
     y1, p1 = eval_model(m1, ds1, batch=args.batch, num_workers=args.num_workers)
     cm1 = confusion_matrix(2, y1, p1)
@@ -96,7 +107,7 @@ def main():
     print(f"F1(drone): {f1_drone:.4f}")
 
     # Stage 2
-    m2, cfg2 = load_model_from_checkpoint(args.stage2_ckpt, model_dir, num_classes=4)
+    m2, cfg2 = load_model_from_checkpoint(args.stage2_ckpt, model_dir, num_classes=4, stage="stage2")
     ds2 = AudioDataset(args.test_csv, task="stage2", cfg=cfg2, min_quality=args.min_quality_stage2, dataset_root=args.dataset_root)
     y2, p2 = eval_model(m2, ds2, batch=args.batch, num_workers=args.num_workers)
     cm2 = confusion_matrix(4, y2, p2)
