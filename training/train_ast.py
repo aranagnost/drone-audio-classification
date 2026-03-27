@@ -155,6 +155,8 @@ def main():
     ap.add_argument("--freeze_encoder",       action="store_true",
                     help="Freeze AST encoder, train classifier head only")
     ap.add_argument("--dataset_root", default=None)
+    ap.add_argument("--cache_dir", default=None,
+                    help="Cache pre-computed AST features to disk (e.g. /kaggle/working/ast_cache)")
     ap.add_argument("--pretrained_model",
                     default="MIT/ast-finetuned-audioset-10-10-0.4593")
     ap.add_argument("--eval", action="store_true",
@@ -182,7 +184,8 @@ def main():
         model.load_state_dict(ckpt["model_state"])
         model.eval()
         ds = ASTAudioDataset(args.test_csv, task=task, extractor=extractor,
-                             dataset_root=args.dataset_root, min_quality=args.min_quality)
+                             dataset_root=args.dataset_root, min_quality=args.min_quality,
+                             cache_dir=args.cache_dir)
         loader = DataLoader(ds, batch_size=args.batch, shuffle=False,
                             num_workers=args.num_workers)
         _, y_t, p_t = run_epoch(model, loader, device=device)
@@ -203,14 +206,19 @@ def main():
     print(f"[INFO] device={device}  model={model_name}  task={task}")
     print(f"[INFO] pretrained={args.pretrained_model}")
 
+    if args.cache_dir:
+        print(f"[INFO] Feature cache: {args.cache_dir}")
+
     train_ds = ASTAudioDataset(
         args.train_csv, task=task, extractor=extractor,
         dataset_root=args.dataset_root, min_quality=args.min_quality,
         max_no_drone_per_subtype=args.max_no_drone_per_subtype,
+        cache_dir=args.cache_dir,
     )
     val_ds = ASTAudioDataset(
         args.val_csv, task=task, extractor=extractor,
         dataset_root=args.dataset_root, min_quality=args.min_quality,
+        cache_dir=args.cache_dir,
     )
     print(f"[INFO] Train: {len(train_ds)}  Val: {len(val_ds)}")
 

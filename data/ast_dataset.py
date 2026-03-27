@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import random
 from pathlib import Path
 from typing import Optional, Dict, Any, List, Tuple
@@ -45,6 +46,7 @@ class ASTAudioDataset(Dataset):
         min_quality: Optional[int] = None,
         max_no_drone_per_subtype: Optional[int] = None,
         exclude_subtypes: Optional[List[str]] = None,
+        cache_dir: Optional[str] = None,
     ):
         if task not in {"stage1", "stage2"}:
             raise ValueError("task must be 'stage1' or 'stage2'")
@@ -95,6 +97,12 @@ class ASTAudioDataset(Dataset):
             self.rows = drone_rows + sampled
             random.shuffle(self.rows)
 
+        if cache_dir is not None:
+            self.cache_dir = Path(cache_dir)
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
+        else:
+            self.cache_dir = None
+
         self.resampler_cache: Dict[Tuple[int, int], torchaudio.transforms.Resample] = {}
 
     def __len__(self) -> int:
@@ -111,19 +119,30 @@ class ASTAudioDataset(Dataset):
             wav = self.resampler_cache[key](wav)
         return _pad_or_trim(wav, self.target_len)
 
-    def __getitem__(self, idx: int):
-        row = self.rows[idx]
-        fp = str(self.dataset_root / row["relpath"]) if self.dataset_root else row["filepath"]
-        wav = self._load_wav(fp)  # (1, T)
-
-        # ASTFeatureExtractor expects a 1D numpy array
+    def _compute_features(self, fp: str) -> torch.Tensor:
+        wav = self._load_wav(fp)
         inputs = self.extractor(
             wav.squeeze(0).numpy(),
             sampling_rate=self.sample_rate,
             return_tensors="pt",
             return_attention_mask=False,
         )
-        x = inputs.input_values.squeeze(0)  # (time_frames, num_mel_bins)
+        return inputs.input_values.squeeze(0)  # (time_frames, num_mel_bins)
+
+    def __getitem__(self, idx: int):
+        row = self.rows[idx]
+        fp = str(self.dataset_root / row["relpath"]) if self.dataset_root else row["filepath"]
+
+        if self.cache_dir is not None:
+            h = hashlib.md5(fp.encode()).hexdigest()
+            cache_file = self.cache_dir / f"{h}.pt"
+            if cache_file.exists():
+                x = torch.load(cache_file, weights_only=True)
+            else:
+                x = self._compute_features(fp)
+                torch.save(x, cache_file)
+        else:
+            x = self._compute_features(fp)
 
         if self.task == "stage1":
             y = self.STAGE1_MAP[row["binary_label"]]
