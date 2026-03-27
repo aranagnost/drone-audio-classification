@@ -1,0 +1,28 @@
+{
+  "stage1": {
+    "model_class": "ASTClassifier",
+    "pretrained_model": "MIT/ast-finetuned-audioset-10-10-0.4593",
+    "optimizer": "adamw",
+    "lr": 2e-5,
+    "weight_decay": 1e-2,
+    "label_smoothing": 0.1,
+    "dropout": 0.0,
+    "epochs": 10,
+    "batch": 8,
+    "num_workers": 2,
+    "use_macro_f1": true
+  },
+  "stage2": {
+    "model_class": "ASTClassifier",
+    "pretrained_model": "MIT/ast-finetuned-audioset-10-10-0.4593",
+    "optimizer": "adamw",
+    "lr": 2e-5,
+    "weight_decay": 1e-2,
+    "label_smoothing": 0.1,
+    "dropout": 0.0,
+    "epochs": 15,
+    "batch": 8,
+    "num_workers": 2,
+    "min_quality": 3
+  }
+}
