@@ -139,13 +139,16 @@ class ASTAudioDataset(Dataset):
             cache_file = self.cache_dir / f"{h}.pt"
             if cache_file.exists():
                 try:
-                    x = torch.load(cache_file, weights_only=True)
+                    x = torch.load(cache_file, weights_only=True).float()
                 except Exception:
                     x = self._compute_features(fp)
+                    tmp = cache_file.with_suffix(".tmp")
+                    torch.save(x.half(), tmp)
+                    os.replace(tmp, cache_file)
             else:
                 x = self._compute_features(fp)
                 tmp = cache_file.with_suffix(".tmp")
-                torch.save(x, tmp)
+                torch.save(x.half(), tmp)
                 os.replace(tmp, cache_file)
         else:
             x = self._compute_features(fp)
