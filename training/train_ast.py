@@ -154,6 +154,8 @@ def main():
     ap.add_argument("--use_macro_f1",         action="store_true")
     ap.add_argument("--freeze_encoder",       action="store_true",
                     help="Freeze AST encoder, train classifier head only")
+    ap.add_argument("--unfreeze_top_n", type=int, default=0,
+                    help="With --freeze_encoder: also unfreeze the last N transformer blocks + layernorm")
     ap.add_argument("--dataset_root", default=None)
     ap.add_argument("--cache_dir", default=None,
                     help="Cache pre-computed AST features to disk (e.g. /kaggle/working/ast_cache)")
@@ -244,10 +246,30 @@ def main():
                        pretrained_model=args.pretrained_model).to(device)
 
     if args.freeze_encoder:
+        # Freeze everything first
+        for p in model.parameters():
+            p.requires_grad_(False)
+        # Always unfreeze the classifier head
         for name, p in model.named_parameters():
-            if "classifier" not in name:
-                p.requires_grad_(False)
-        print("[INFO] Encoder frozen — training classifier head only")
+            if "classifier" in name:
+                p.requires_grad_(True)
+        if args.unfreeze_top_n > 0:
+            # AST has 12 transformer blocks: encoder.layer.0 … encoder.layer.11
+            n_layers = 12
+            unfreeze_from = n_layers - args.unfreeze_top_n
+            for name, p in model.named_parameters():
+                # Unfreeze last N transformer blocks
+                for i in range(unfreeze_from, n_layers):
+                    if f"encoder.layer.{i}." in name:
+                        p.requires_grad_(True)
+                        break
+                # Unfreeze layernorm after the transformer stack
+                if "audio_spectrogram_transformer.layernorm" in name:
+                    p.requires_grad_(True)
+            print(f"[INFO] Encoder partially frozen — training last {args.unfreeze_top_n} "
+                  f"transformer blocks + layernorm + classifier head")
+        else:
+            print("[INFO] Encoder frozen — training classifier head only")
 
     n_params = sum(p.numel() for p in model.parameters())
     n_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
