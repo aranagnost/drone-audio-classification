@@ -214,6 +214,7 @@ def main():
         dataset_root=args.dataset_root, min_quality=args.min_quality,
         max_no_drone_per_subtype=args.max_no_drone_per_subtype,
         cache_dir=args.cache_dir,
+        augment=True,
     )
     val_ds = ASTAudioDataset(
         args.val_csv, task=task, extractor=extractor,

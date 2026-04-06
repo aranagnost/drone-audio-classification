@@ -48,6 +48,11 @@ class ASTAudioDataset(Dataset):
         max_no_drone_per_subtype: Optional[int] = None,
         exclude_subtypes: Optional[List[str]] = None,
         cache_dir: Optional[str] = None,
+        augment: bool = False,
+        time_mask_max: int = 40,
+        freq_mask_max: int = 20,
+        n_time_masks: int = 2,
+        n_freq_masks: int = 2,
     ):
         if task not in {"stage1", "stage2"}:
             raise ValueError("task must be 'stage1' or 'stage2'")
@@ -104,6 +109,12 @@ class ASTAudioDataset(Dataset):
         else:
             self.cache_dir = None
 
+        self.augment = augment
+        self.time_mask_max = time_mask_max
+        self.freq_mask_max = freq_mask_max
+        self.n_time_masks = n_time_masks
+        self.n_freq_masks = n_freq_masks
+
         self.resampler_cache: Dict[Tuple[int, int], torchaudio.transforms.Resample] = {}
 
     def __len__(self) -> int:
@@ -119,6 +130,19 @@ class ASTAudioDataset(Dataset):
                 self.resampler_cache[key] = torchaudio.transforms.Resample(sr, self.sample_rate)
             wav = self.resampler_cache[key](wav)
         return _pad_or_trim(wav, self.target_len)
+
+    def _specaugment(self, x: torch.Tensor) -> torch.Tensor:
+        """SpecAugment: random time and frequency masking (in-place on a clone)."""
+        T, F = x.shape
+        for _ in range(self.n_time_masks):
+            t = random.randint(0, min(self.time_mask_max, T - 1))
+            t0 = random.randint(0, T - t)
+            x[t0:t0 + t, :] = 0.0
+        for _ in range(self.n_freq_masks):
+            f = random.randint(0, min(self.freq_mask_max, F - 1))
+            f0 = random.randint(0, F - f)
+            x[:, f0:f0 + f] = 0.0
+        return x
 
     def _compute_features(self, fp: str) -> torch.Tensor:
         wav = self._load_wav(fp)
@@ -152,6 +176,9 @@ class ASTAudioDataset(Dataset):
                 os.replace(tmp, cache_file)
         else:
             x = self._compute_features(fp)
+
+        if self.augment:
+            x = self._specaugment(x.clone())
 
         if self.task == "stage1":
             y = self.STAGE1_MAP[row["binary_label"]]
