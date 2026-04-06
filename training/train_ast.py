@@ -156,6 +156,8 @@ def main():
                     help="Freeze AST encoder, train classifier head only")
     ap.add_argument("--unfreeze_top_n", type=int, default=0,
                     help="With --freeze_encoder: also unfreeze the last N transformer blocks + layernorm")
+    ap.add_argument("--mlp_head", action="store_true",
+                    help="Replace the linear classifier with a 2-layer MLP head (768->256->num_classes)")
     ap.add_argument("--dataset_root", default=None)
     ap.add_argument("--cache_dir", default=None,
                     help="Cache pre-computed AST features to disk (e.g. /kaggle/working/ast_cache)")
@@ -182,7 +184,8 @@ def main():
         device = "cuda" if torch.cuda.is_available() else "cpu"
         ckpt = torch.load(args.out, map_location=device, weights_only=False)
         model = ModelClass(num_classes=num_classes, dropout=0.0,
-                           pretrained_model=args.pretrained_model).to(device)
+                           pretrained_model=args.pretrained_model,
+                           mlp_head=args.mlp_head).to(device)
         model.load_state_dict(ckpt["model_state"])
         model.eval()
         ds = ASTAudioDataset(args.test_csv, task=task, extractor=extractor,
@@ -243,7 +246,8 @@ def main():
                             num_workers=args.num_workers)
 
     model = ModelClass(num_classes=num_classes, dropout=args.dropout,
-                       pretrained_model=args.pretrained_model).to(device)
+                       pretrained_model=args.pretrained_model,
+                       mlp_head=args.mlp_head).to(device)
 
     if args.freeze_encoder:
         # Freeze everything first
