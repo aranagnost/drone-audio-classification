@@ -23,6 +23,6 @@
     "epochs": 15,
     "batch": 8,
     "num_workers": 2,
-    "min_quality": 3
+    "min_quality": null
   }
 }

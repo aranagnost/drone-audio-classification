@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 MOTOR_CLASSES = ["2_motors", "4_motors", "6_motors", "8_motors"]
-QUALITY_BINS = [(3, 3), (4, 5)]  # mid (q3), high (q4-q5) — only quality>=3 matters for training
+QUALITY_BINS = [(1, 2), (3, 3), (4, 5)]  # low (q1-q2), mid (q3), high (q4-q5)
 
 
 def read_rows(csv_path: Path):
@@ -46,23 +46,17 @@ def quality_bin(q: int) -> int:
 
 
 def url_stratum(url_rows) -> str:
-    """
-    Assign each URL a stratum key = (dominant_motor, dominant_quality_bin).
-    Only considers rows with quality >= 3 so strata reflect the filtered training data.
-    Falls back to q0 stratum if the URL has no q3+ rows.
-    """
+    """Assign each URL a stratum key = (dominant_motor, dominant_quality_bin)."""
     motor_counts = Counter()
     qbin_counts = Counter()
     for r in url_rows:
         motor_counts[r["motor_label"]] += 1
         try:
-            q = int(r.get("quality", "1"))
-            if q >= 3:
-                qbin_counts[quality_bin(q)] += 1
+            qbin_counts[quality_bin(int(r.get("quality", "1")))] += 1
         except ValueError:
-            pass
+            qbin_counts[0] += 1
     dominant_motor = motor_counts.most_common(1)[0][0]
-    dominant_qbin = qbin_counts.most_common(1)[0][0] if qbin_counts else -1
+    dominant_qbin = qbin_counts.most_common(1)[0][0]
     return f"{dominant_motor}__q{dominant_qbin}"
 
 
@@ -100,17 +94,14 @@ def counts_in_split(groups, split_urls_list):
 
 
 def motor_quality_counts(groups, split_urls_list):
-    """Return {motor: {qbin: count}} for quality>=3 rows only."""
+    """Return {motor: {qbin: count}} for all rows."""
     result = defaultdict(Counter)
     for u in split_urls_list:
         for r in groups[u]:
             try:
-                q = int(r.get("quality", "1"))
-                if q < 3:
-                    continue
-                qb = quality_bin(q)
+                qb = quality_bin(int(r.get("quality", "1")))
             except ValueError:
-                continue
+                qb = 0
             result[r["motor_label"]][qb] += 1
     return result
 
@@ -215,7 +206,7 @@ def main():
     for split_name, split_urls_list in [("Val", val_urls), ("Test", test_urls)]:
         mq = motor_quality_counts(groups, split_urls_list)
         bin_labels = [f"q{i}({lo}-{hi})" for i, (lo, hi) in enumerate(QUALITY_BINS)]
-        print(f"\n{split_name} quality breakdown (quality>=3 only, bins: {bin_labels}):")
+        print(f"\n{split_name} quality breakdown (all qualities, bins: {bin_labels}):")
         for motor in MOTOR_CLASSES:
             total = sum(mq[motor].values()) or 1
             fracs = {f"q{b}": f"{mq[motor].get(b,0)/total:.0%}" for b in range(len(QUALITY_BINS))}
