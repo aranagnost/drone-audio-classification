@@ -242,6 +242,8 @@ def main():
                     help="Dataset task mode (stage2_coarse for 3_stages_cnn_v1)")
     ap.add_argument("--eval", action="store_true",
                     help="Evaluate checkpoint on --test_csv (no training)")
+    ap.add_argument("--patience", type=int, default=0,
+                    help="Early stopping: stop if macroF1 does not improve for N epochs (0 = disabled)")
     ap.add_argument("--dataset_root", default=None,
                     help="Override absolute filepaths in CSVs using relpath column "
                          "(e.g. /content/drive/MyDrive/drone-audio/datasets/Drone_Audio_Dataset/audio)")
@@ -376,6 +378,7 @@ def main():
         scheduler = None
 
     best_mf1 = -1.0
+    no_improve = 0
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -398,6 +401,7 @@ def main():
 
         if mf1 > best_mf1:
             best_mf1 = mf1
+            no_improve = 0
             torch.save({
                 "model_state": model.state_dict(),
                 "cfg": cfg.__dict__,
@@ -413,6 +417,11 @@ def main():
                 "gain_jitter_db": args.gain_jitter_db,
             }, out_path)
             print(f"  ** Saved best -> {out_path} (macroF1={best_mf1:.4f})")
+        else:
+            no_improve += 1
+            if args.patience > 0 and no_improve >= args.patience:
+                print(f"  [Early stop] No improvement for {args.patience} epochs.")
+                break
 
     print(f"[DONE] Best macroF1 = {best_mf1:.4f}")
 

@@ -165,6 +165,8 @@ def main():
                     default="MIT/ast-finetuned-audioset-10-10-0.4593")
     ap.add_argument("--eval", action="store_true",
                     help="Evaluate checkpoint on --test_csv (no training)")
+    ap.add_argument("--patience", type=int, default=0,
+                    help="Early stopping: stop if score does not improve for N epochs (0 = disabled)")
 
     ap.set_defaults(**cfg_dict)
     args = ap.parse_args()
@@ -293,6 +295,7 @@ def main():
         optimizer, T_max=args.epochs, eta_min=1e-7)
 
     best_score = -1.0
+    no_improve = 0
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -319,6 +322,7 @@ def main():
 
         if score > best_score:
             best_score = score
+            no_improve = 0
             ckpt = {
                 "model_state": model.state_dict(),
                 "model_class": model_class_name,
@@ -331,6 +335,11 @@ def main():
             }
             torch.save(ckpt, out_path)
             print(f"  ** Saved best -> {out_path} (score={best_score:.4f})")
+        else:
+            no_improve += 1
+            if args.patience > 0 and no_improve >= args.patience:
+                print(f"  [Early stop] No improvement for {args.patience} epochs.")
+                break
 
     print(f"[DONE] Best score = {best_score:.4f}")
 
