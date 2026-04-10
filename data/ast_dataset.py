@@ -187,6 +187,7 @@ class ASTAudioDataset(Dataset):
 
         meta = {
             "filepath": fp,
+            "relpath": row.get("relpath", ""),
             "binary_label": row.get("binary_label", ""),
             "motor_label": row.get("motor_label", ""),
             "subtype": row.get("subtype", ""),

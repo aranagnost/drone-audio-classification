@@ -33,6 +33,10 @@ import traceback
 import warnings
 from pathlib import Path
 
+# Disable numba JIT before any librosa import — chroma_stft calls estimate_tuning()
+# which uses numba and segfaults inside parallel workers (both loky and threading).
+os.environ.setdefault("NUMBA_DISABLE_JIT", "1")
+
 import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed
@@ -124,7 +128,8 @@ def _hnr_feature(y: np.ndarray) -> dict:
 
 def _chroma_features(y: np.ndarray, sr: int) -> dict:
     import librosa
-    chroma = librosa.feature.chroma_stft(y=y, sr=sr)
+    # tuning=0.0 skips estimate_tuning() which uses numba and segfaults in forked workers
+    chroma = librosa.feature.chroma_stft(y=y, sr=sr, tuning=0.0)
     return {f"chroma_mean_{i:02d}": float(np.mean(chroma[i])) for i in range(12)}
 
 
@@ -139,7 +144,9 @@ def _tonnetz_features(y: np.ndarray, sr: int) -> dict:
     y_harm, _ = librosa.effects.hpss(y)
     if np.max(np.abs(y_harm)) < 1e-6:
         y_harm = y     # fallback if harmonic component is silent
-    tonnetz = librosa.feature.tonnetz(y=y_harm, sr=sr)
+    # Pass pre-computed chroma to avoid tonnetz calling CQT internally (uses numba → segfault)
+    chroma = librosa.feature.chroma_stft(y=y_harm, sr=sr, tuning=0.0)
+    tonnetz = librosa.feature.tonnetz(chroma=chroma)
     return {f"tonnetz_mean_{i}": float(np.mean(tonnetz[i])) for i in range(6)}
 
 
@@ -299,7 +306,7 @@ def main():
     print(f"\n[INFO] Total clips to process: {len(all_rows)}")
     print(f"[INFO] Parallel workers: {args.n_jobs}")
 
-    results = Parallel(n_jobs=args.n_jobs, verbose=5)(
+    results = Parallel(n_jobs=args.n_jobs, verbose=5, prefer="threads")(
         delayed(extract_row)(row, args.dataset_root)
         for row in all_rows
     )

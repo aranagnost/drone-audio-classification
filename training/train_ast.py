@@ -167,6 +167,8 @@ def main():
                     help="Evaluate checkpoint on --test_csv (no training)")
     ap.add_argument("--patience", type=int, default=0,
                     help="Early stopping: stop if score does not improve for N epochs (0 = disabled)")
+    ap.add_argument("--save_preds", default=None,
+                    help="Save per-clip predictions to CSV (columns: relpath, pred_label, true_label)")
 
     ap.set_defaults(**cfg_dict)
     args = ap.parse_args()
@@ -195,7 +197,19 @@ def main():
                              cache_dir=args.cache_dir)
         loader = DataLoader(ds, batch_size=args.batch, shuffle=False,
                             num_workers=args.num_workers)
-        _, y_t, p_t = run_epoch(model, loader, device=device)
+
+        # Single forward pass — collect preds and optionally relpaths
+        ys, ps, relpaths = [], [], []
+        with torch.no_grad():
+            for x, y, meta in loader:
+                logits = model(x.to(device))
+                ps.append(logits.argmax(1).cpu())
+                ys.append(torch.as_tensor(y).cpu())
+                if args.save_preds:
+                    relpaths.extend(meta["relpath"])
+        y_t = torch.cat(ys)
+        p_t = torch.cat(ps)
+
         cm = confusion_matrix(num_classes, y_t, p_t)
         sep = "═" * 60
         print(f"\n{sep}")
@@ -206,6 +220,16 @@ def main():
         for i, lbl in enumerate(labels_list):
             print(f"  F1({lbl}): {f1_from_cm(cm, i):.4f}")
         print(f"  CM: {cm.tolist()}")
+
+        if args.save_preds:
+            import pandas as pd
+            rows_out = [
+                {"relpath": rp, "pred_label": labels_list[p.item()], "true_label": labels_list[y.item()]}
+                for rp, p, y in zip(relpaths, p_t, y_t)
+            ]
+            Path(args.save_preds).parent.mkdir(parents=True, exist_ok=True)
+            pd.DataFrame(rows_out).to_csv(args.save_preds, index=False)
+            print(f"  [SAVE] Predictions -> {args.save_preds}  ({len(rows_out)} rows)")
         return
 
     set_seed(args.seed)

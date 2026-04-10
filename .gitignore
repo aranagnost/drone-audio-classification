@@ -21,6 +21,7 @@ drone_dataset.zip
 *.flac
 *.m4a
 *.csv
+*.parquet
 
 # Un-ignore train/val/test split CSVs (small, needed for reproducibility)
 !data/splits/*.csv
