@@ -1,0 +1,13 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers
+xgboost
+lightgbm
+scikit-learn
+scipy
+pandas
+numpy
+joblib
+pyarrow
+pydub
+flask

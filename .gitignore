@@ -1,0 +1,26 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch & ML models
+*.pt
+*.pth
+*.ckpt
+*.joblib
+
+# Datasets, audio & features
+*.wav
+*.mp3
+*.flac
+*.parquet
+dataset/
+datasets/
+
+# OS & IDEs
+.DS_Store
+.idea/
+.vscode/
+.venv/
+venv/
+env/

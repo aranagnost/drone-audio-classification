@@ -1,0 +1,24 @@
+name: drone_audio
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - pytorch
+  - torchaudio
+  - torchvision
+  - pip:
+    - transformers
+    - xgboost
+    - lightgbm
+    - joblib
+    - pyarrow
+    - pydub
+    - flask
