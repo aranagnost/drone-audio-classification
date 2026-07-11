@@ -15,7 +15,7 @@ Acoustic detection provides a passive alternative to traditional radar and visua
 
 62,535 annotated two-second clips (12,327 drone, 50,208 non-drone) across 10 distractor subtypes (wind, power tools, airplanes, and others). Splits are URL-disjoint at the source-recording level to prevent leakage.
 
-* [Link to Kaggle Dataset] *(to be published)*
+* **Dataset:** [Drone Audio Dataset on Kaggle](https://www.kaggle.com/datasets/aranagnost/drone-audio-dataset)
 
 ## Repository Structure
 
@@ -43,3 +43,4 @@ python eval/eval_end_to_end.py
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The dataset on Kaggle is released separately under CC BY-NC 4.0.
