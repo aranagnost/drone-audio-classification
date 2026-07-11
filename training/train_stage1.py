@@ -1,4 +1,3 @@
-# training/train_stage1.py
 """
 Consolidated stage-1 training script (binary drone detection).
 
@@ -125,8 +124,8 @@ def print_error_breakdown(va_y, va_p, all_meta):
     fp_parts = "  ".join(
         f"{s}={v[0]}/{v[1]}" for s, v in sorted(fp_subtype.items(), key=lambda x: -x[1][0]) if v[0] > 0
     ) or "none"
-    print(f"  FN(drone→no_drone) by quality: {fn_parts}")
-    print(f"  FP(no_drone→drone) by subtype: {fp_parts}")
+    print(f"  FN(drone->no_drone) by quality: {fn_parts}")
+    print(f"  FP(no_drone->drone) by subtype: {fp_parts}")
 
 
 def run_tune_threshold(args, model_mod, cfg_dict):
@@ -173,7 +172,7 @@ def run_tune_threshold(args, model_mod, cfg_dict):
 
     print(f"\n[Test set: {args.test_csv}]")
     test_y, test_probs = collect_probs(args.test_csv)
-    sep = "═" * 60
+    sep = "=" * 60
     print(sep)
     for t, label in [(0.5, f"thresh=0.50 (default)"),
                      (best_thresh, f"thresh={best_thresh:.2f} (tuned) ")]:
@@ -217,7 +216,7 @@ def run_eval(args, model_mod, cfg_dict):
     f1_drone   = f1_from_cm(cm, class_index=1)
     f1_nodrone = f1_from_cm(cm, class_index=0)
 
-    sep = "═" * 60
+    sep = "=" * 60
     print(f"\n{sep}")
     print(f"  Evaluation on : {args.test_csv}")
     print(f"  Checkpoint    : {args.out}")

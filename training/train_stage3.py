@@ -1,10 +1,9 @@
-# training/train_stage3.py
 """
 Train ThreeStagesCNNv1 stage 3 (fine motor classification, binary: 4 vs 6 motors).
 
 This stage only runs during inference when stage 2 is confident that the input
 belongs to the "4or6_motors" class.  Training uses only 4_motors and 6_motors
-clips — a focused binary classifier that can dedicate all its capacity to the
+clips - a focused binary classifier that can dedicate all its capacity to the
 single hard acoustic boundary between these two classes.
 
 Default min_quality=4 keeps only the clearest recordings, where the harmonic
@@ -181,7 +180,7 @@ def main():
         mf1 = macro_f1(cm)
         f1_4 = f1_from_cm(cm, 0)
         f1_6 = f1_from_cm(cm, 1)
-        sep = "═" * 60
+        sep = "=" * 60
         print(f"\n{sep}")
         print(f"  Evaluation on : {args.test_csv}")
         print(f"  Checkpoint    : {args.out}  (min_quality>={mq})")

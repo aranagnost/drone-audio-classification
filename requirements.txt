@@ -1,13 +1,27 @@
+# Install the CPU build of PyTorch from the official index. The default PyPI
+# torch wheel on Linux is the (huge) CUDA build; the +cpu wheels below are
+# MKL/AVX2-optimised and are what makes inference fast on CPU. run_demo.sh
+# installs torch/torchaudio from this index explicitly before the rest.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 torch>=2.0.0
 torchaudio>=2.0.0
-transformers
+# transformers 5.x renamed the AST backbone modules (encoder.layer.* -> layers.*,
+# attention.attention.query -> attention.q_proj), which makes the fine-tuned AST
+# checkpoints fail to load. Pin to 4.x, which matches the training-time weights.
+transformers>=4.40,<5
+hear21passt        # PaSST backbone (get_basic_model); pulls in timm
+timm
 xgboost
 lightgbm
 scikit-learn
 scipy
 pandas
-numpy
+numpy<2            # numba (via librosa) is unreliable on numpy 2.x
 joblib
 pyarrow
 pydub
 flask
+librosa
+soundfile          # wav decoding in the demo (avoids torchaudio/torchcodec)
+praat-parselmouth

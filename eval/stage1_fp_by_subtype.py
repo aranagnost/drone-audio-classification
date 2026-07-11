@@ -125,7 +125,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── Load saved TTA predictions ──────────────────────────────────────────
+    # -- Load saved TTA predictions ------------------------------------------
     ast_v, ast_t = pd.read_csv(args.ast_val), pd.read_csv(args.ast_test)
     ps_v,  ps_t  = pd.read_csv(args.passt_val), pd.read_csv(args.passt_test)
 
@@ -142,14 +142,14 @@ def main():
     y_val  = np.array([LABEL_TO_IDX[l] for l in ast_v["true_label"]])
     y_test = np.array([LABEL_TO_IDX[l] for l in true_test])
 
-    # ── Calibrate (NLL) on val ──────────────────────────────────────────────
+    # -- Calibrate (NLL) on val ----------------------------------------------
     T_ast = fit_T(p_ast_v, y_val)
     T_ps  = fit_T(p_ps_v,  y_val)
     p_ast_t_c, p_ps_t_c = apply_T(p_ast_t, T_ast), apply_T(p_ps_t, T_ps)
     p_ast_v_c, p_ps_v_c = apply_T(p_ast_v, T_ast), apply_T(p_ps_v, T_ps)
     print(f"[calibration] T_AST = {T_ast:.3f}   T_PaSST = {T_ps:.3f}")
 
-    # ── Define the three operating points ───────────────────────────────────
+    # -- Define the three operating points -----------------------------------
     # (1) val_tuned deployable: pick (w, tau) by val macroF1
     best_w_val = (-1.0, 0.0, 0.5)
     for w in np.linspace(0.0, 1.0, 21):
@@ -180,7 +180,7 @@ def main():
         },
     }
 
-    # ── Build breakdowns ────────────────────────────────────────────────────
+    # -- Build breakdowns ----------------------------------------------------
     csv_rows = []
     json_out = {
         "calibration": {"T_AST": T_ast, "T_PaSST": T_ps},
@@ -217,7 +217,7 @@ def main():
         print(f"[{name:14s}] w_AST={s['w_ast']:.2f} tau={s['tau']:.2f} "
               f"mF1={mf1:.4f}  total_FP={total_fp}")
 
-    # ── Save ────────────────────────────────────────────────────────────────
+    # -- Save ----------------------------------------------------------------
     csv_path = out_dir / "stage1_fp_by_subtype.csv"
     json_path = out_dir / "stage1_fp_by_subtype.json"
     pd.DataFrame(csv_rows).to_csv(csv_path, index=False)

@@ -1,4 +1,3 @@
-# models/ast_v1/model.py
 from __future__ import annotations
 
 import warnings
@@ -27,15 +26,13 @@ class _MLPHead(nn.Module):
 
 
 class ASTClassifier(nn.Module):
-    """
-    Fine-tunable AST (Audio Spectrogram Transformer) wrapper.
+    """Fine-tunable AST (Audio Spectrogram Transformer) wrapper.
 
-    Wraps HuggingFace ASTForAudioClassification with a constructor signature
-    compatible with the existing training scripts:
-        ModelClass(num_classes=N, dropout=D)
+    Wraps HuggingFace ASTForAudioClassification with a ModelClass(num_classes=N,
+    dropout=D) signature.
 
-    Input:  (batch, time_frames, num_mel_bins)  — from ASTFeatureExtractor
-    Output: (batch, num_classes)                 — raw logits
+    Input:  (batch, time_frames, num_mel_bins) from ASTFeatureExtractor
+    Output: (batch, num_classes) raw logits
     """
 
     def __init__(
@@ -61,7 +58,7 @@ class ASTClassifier(nn.Module):
             hidden_size = self.ast.config.hidden_size  # 768
             self.ast.classifier = _MLPHead(hidden_size, num_classes, dropout)
 
-        # Expose classifier so freeze logic and inference_app work unchanged
+        # Expose the classifier so freeze logic and inference reach it directly.
         self.classifier = self.ast.classifier
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:

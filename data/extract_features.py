@@ -2,13 +2,13 @@
 Extract handcrafted acoustic features from audio clips.
 
 Produces a single parquet (or CSV) file with one row per clip containing:
-  - 40  MFCCs (20 coefficients × mean + std)
+  - 40  MFCCs (20 coefficients x mean + std)
   - 8   Spectral: centroid, rolloff, bandwidth, flatness (mean + std each)
   - 2   Zero-crossing rate (mean + std)
   - 1   Harmonic-to-noise ratio (mean)
-  - 12  Chroma (12 bins × mean)
-  - 7   Spectral contrast (7 bands × mean)
-  - 6   Tonnetz (6 dims × mean)
+  - 12  Chroma (12 bins x mean)
+  - 7   Spectral contrast (7 bands x mean)
+  - 6   Tonnetz (6 dims x mean)
   - 12  HPS: f0, top-5 peak freqs, 4 ratios (fi/f1), spacing mean + std
   - 4   Sub-band energy ratios (4 equal bands)
   Total: 92 acoustic features
@@ -17,7 +17,7 @@ Produces a single parquet (or CSV) file with one row per clip containing:
                          quality, youtube_url, split
 
 Usage:
-    python features/extract_features.py \\
+    python data/extract_features.py \\
         --train_csv data/splits_stage2/train.csv \\
         --val_csv   data/splits_stage2/val.csv \\
         --test_csv  data/splits_stage2/test.csv \\
@@ -33,7 +33,7 @@ import traceback
 import warnings
 from pathlib import Path
 
-# Disable numba JIT before any librosa import — chroma_stft calls estimate_tuning()
+# Disable numba JIT before any librosa import: chroma_stft calls estimate_tuning()
 # which uses numba and segfaults inside parallel workers (both loky and threading).
 os.environ.setdefault("NUMBA_DISABLE_JIT", "1")
 
@@ -144,7 +144,7 @@ def _tonnetz_features(y: np.ndarray, sr: int) -> dict:
     y_harm, _ = librosa.effects.hpss(y)
     if np.max(np.abs(y_harm)) < 1e-6:
         y_harm = y     # fallback if harmonic component is silent
-    # Pass pre-computed chroma to avoid tonnetz calling CQT internally (uses numba → segfault)
+    # Pass pre-computed chroma to avoid tonnetz calling CQT internally (uses numba, segfaults)
     chroma = librosa.feature.chroma_stft(y=y_harm, sr=sr, tuning=0.0)
     tonnetz = librosa.feature.tonnetz(chroma=chroma)
     return {f"tonnetz_mean_{i}": float(np.mean(tonnetz[i])) for i in range(6)}
@@ -260,6 +260,44 @@ def extract_row(row: dict, dataset_root: str | None) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Single-file extraction (used by the live demo)
+# ---------------------------------------------------------------------------
+
+def extract_for_file(wav_path: str, feature_order: list[str] | None = None) -> np.ndarray:
+    """Extract the 92 acoustic features for one 2 s wav file and return a
+    (1, N) float32 array ready for a tree model's ``predict_proba``.
+
+    The audio is loaded exactly as in training (``load_audio``: 16 kHz mono,
+    padded/trimmed to 2 s). When ``feature_order`` is given (the model's
+    ``feature_names.txt``), the columns are emitted in that exact order;
+    otherwise the natural insertion order is used, which matches the parquet
+    column order the trees were trained on. NaN/Inf are zeroed.
+    """
+    y = load_audio(wav_path)
+    sr = TARGET_SR
+
+    feats: dict = {}
+    feats.update(_mfcc_features(y, sr))
+    feats.update(_spectral_features(y, sr))
+    feats.update(_zcr_features(y))
+    feats.update(_hnr_feature(y))
+    feats.update(_chroma_features(y, sr))
+    feats.update(_contrast_features(y, sr))
+    feats.update(_tonnetz_features(y, sr))
+    feats.update(_hps_features(y, sr))
+    feats.update(_subband_energy(y))
+
+    if feature_order is None:
+        vals = list(feats.values())
+    else:
+        vals = [float(feats.get(k, 0.0)) for k in feature_order]
+
+    X = np.asarray([vals], dtype=np.float32)
+    np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0, copy=False)
+    return X
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -337,7 +375,7 @@ def main():
     else:
         df.to_csv(out_path, index=False)
 
-    print(f"\n[DONE] Saved {len(df)} rows × {len(df.columns)} columns -> {out_path}")
+    print(f"\n[DONE] Saved {len(df)} rows x {len(df.columns)} columns -> {out_path}")
     print(f"       Feature columns: {len(df.columns) - len(META_COLS)}")
     print(f"       Split counts:\n{df['split'].value_counts().to_string()}")
     print(f"       Motor counts:\n{df['motor_label'].value_counts().to_string()}")

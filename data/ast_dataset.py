@@ -1,4 +1,3 @@
-# data/ast_dataset.py
 from __future__ import annotations
 
 import csv
@@ -16,7 +15,7 @@ from torch.utils.data import Dataset
 import torchaudio
 from transformers import ASTFeatureExtractor
 
-# Stitching constants — must match scripts/segment_audio.py
+# Stitching constants - must match scripts/segment_audio.py
 _BASE_SEG_SECONDS = 2.0
 _STEP_SECONDS     = 1.5
 _OVERLAP_SECONDS  = _BASE_SEG_SECONDS - _STEP_SECONDS    # 0.5 s
@@ -53,7 +52,7 @@ class ASTAudioDataset(Dataset):
     Returns (input_values, y, meta) where input_values has shape
     (time_frames, num_mel_bins) as expected by ASTForAudioClassification.
 
-    NOTE: Do NOT use with eval.py — AST checkpoints have no 'cfg' key.
+    NOTE: Do NOT use with eval.py - AST checkpoints have no 'cfg' key.
           Use train_ast.py --eval instead.
     """
 
@@ -147,7 +146,7 @@ class ASTAudioDataset(Dataset):
 
         self.resampler_cache: Dict[Tuple[int, int], torchaudio.transforms.Resample] = {}
 
-        # Stitch-group setup — only needed when we want > 2 s context.
+        # Stitch-group setup - only needed when we want > 2 s context.
         # For stage2 we group by (motor_label, group_key); for stage1 drone
         # rows we also group (so we never stitch across classes). no_drone
         # rows are always left as singleton groups.
@@ -173,7 +172,7 @@ class ASTAudioDataset(Dataset):
 
         The group key is (motor_label, youtube_url, group_key_root):
         - motor_label keeps classes apart even if URLs somehow collide.
-        - youtube_url prevents cross-split collisions — our splits are
+        - youtube_url prevents cross-split collisions - our splits are
           URL-disjoint (verified), so train/val/test can never share a
           stitch group or a cache file.
         - group_key_root lets us split a single long recording into
@@ -182,7 +181,7 @@ class ASTAudioDataset(Dataset):
 
         Local files (non-YouTube) have a unique youtube_url per file in
         this dataset (it stores the absolute local path), so they
-        automatically become singleton groups — the stitched waveform
+        automatically become singleton groups - the stitched waveform
         is a single 2 s clip that will be looped to fill the window.
         """
         tmp: Dict[Tuple[str, str, str], List[Tuple[int, int]]] = defaultdict(list)
@@ -193,7 +192,7 @@ class ASTAudioDataset(Dataset):
             motor   = row.get("motor_label", "") or binary
             url     = row.get("youtube_url", "") or f"__no_url__::{relpath}"
             if binary == "no_drone":
-                # Singleton group — stitching across noise clips is meaningless.
+                # Singleton group - stitching across noise clips is meaningless.
                 key = (f"no_drone::{relpath}", "", "")
                 self._group_rows[key] = [(0, i)]
                 continue
@@ -296,7 +295,7 @@ class ASTAudioDataset(Dataset):
                 torch.save(torch.from_numpy(stitched).half(), tmp)
                 os.replace(tmp, cache_path)
             except (OSError, RuntimeError):
-                # Disk-full or other I/O failure — drop the cache write but
+                # Disk-full or other I/O failure - drop the cache write but
                 # still return the in-memory waveform. Cleanup partial tmp.
                 try:
                     tmp.unlink(missing_ok=True)
@@ -309,7 +308,7 @@ class ASTAudioDataset(Dataset):
         """
         Pre-build (and cache) the stitched waveform for every group. Must be
         called BEFORE the DataLoader spawns workers so that workers only ever
-        read from the cache — avoids both redundant work and write races.
+        read from the cache - avoids both redundant work and write races.
 
         Cheap no-op if the cache is already fully populated.
         """

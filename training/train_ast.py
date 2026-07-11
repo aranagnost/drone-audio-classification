@@ -1,4 +1,3 @@
-# training/train_ast.py
 """
 AST (Audio Spectrogram Transformer) fine-tuning script.
 Handles both stage1 (binary drone detection) and stage2 (motor count).
@@ -76,7 +75,7 @@ def make_stage1_sampler(csv_path: str):
 def make_stage1_sampler_from_rows(rows):
     """Build a stage1 weighted sampler that matches a *post-filtering* dataset
     (e.g. after --max_no_drone_per_subtype). Use this whenever the dataset
-    rows differ from the raw CSV — otherwise sampler indices can exceed
+    rows differ from the raw CSV - otherwise sampler indices can exceed
     len(dataset) and crash the worker with IndexError."""
     labels = []
     counts = {"no_drone": 0, "drone": 0}
@@ -112,8 +111,8 @@ def make_stage2_sampler(csv_path: str, min_quality: int = 1):
 def _ordinal_soft_targets(y, num_classes, sigma):
     """Build a soft target distribution where mass decays with ordinal distance.
 
-    target[i, c] ∝ exp(-(c - y_i)^2 / (2 * sigma^2)), then row-normalised.
-    Equivalent to a softmax over -d^2 / 2σ^2.
+    target[i, c] is proportional to exp(-(c - y_i)^2 / (2 * sigma^2)), then
+    row-normalised. Equivalent to a softmax over -d^2 / (2 * sigma^2).
     """
     classes = torch.arange(num_classes, device=y.device, dtype=torch.float32)
     dist_sq = (classes.unsqueeze(0) - y.unsqueeze(1).float()).pow(2)
@@ -176,7 +175,7 @@ def main():
     ap.add_argument("--weight_decay", type=float, default=1e-2)
     ap.add_argument("--label_smoothing", type=float, default=0.1)
     ap.add_argument("--ordinal_sigma",   type=float, default=0.0,
-                    help="Soft-ordinal CE σ (0=off). Targets become softmax(-(c-y)^2/2σ^2).")
+                    help="Soft-ordinal CE sigma (0=off). Targets become softmax(-(c-y)^2/(2*sigma^2)).")
     ap.add_argument("--dropout",      type=float, default=0.0)
     ap.add_argument("--grad_clip",    type=float, default=1.0)
     ap.add_argument("--seed",         type=int,   default=42)
@@ -241,7 +240,7 @@ def main():
         loader = DataLoader(ds, batch_size=args.batch, shuffle=False,
                             num_workers=args.num_workers)
 
-        # Single forward pass — collect preds and optionally relpaths
+        # Single forward pass - collect preds and optionally relpaths
         ys, ps, relpaths = [], [], []
         with torch.no_grad():
             for x, y, meta in loader:
@@ -254,7 +253,7 @@ def main():
         p_t = torch.cat(ps)
 
         cm = confusion_matrix(num_classes, y_t, p_t)
-        sep = "═" * 60
+        sep = "=" * 60
         print(f"\n{sep}")
         print(f"  Evaluation  : {args.test_csv}")
         print(f"  Checkpoint  : {args.out}")
@@ -338,7 +337,7 @@ def main():
             if "classifier" in name:
                 p.requires_grad_(True)
         if args.unfreeze_top_n > 0:
-            # AST has 12 transformer blocks: encoder.layer.0 … encoder.layer.11
+            # AST has 12 transformer blocks: encoder.layer.0 ... encoder.layer.11
             n_layers = 12
             unfreeze_from = n_layers - args.unfreeze_top_n
             for name, p in model.named_parameters():
@@ -350,10 +349,10 @@ def main():
                 # Unfreeze layernorm after the transformer stack
                 if "audio_spectrogram_transformer.layernorm" in name:
                     p.requires_grad_(True)
-            print(f"[INFO] Encoder partially frozen — training last {args.unfreeze_top_n} "
+            print(f"[INFO] Encoder partially frozen - training last {args.unfreeze_top_n} "
                   f"transformer blocks + layernorm + classifier head")
         else:
-            print("[INFO] Encoder frozen — training classifier head only")
+            print("[INFO] Encoder frozen - training classifier head only")
 
     n_params = sum(p.numel() for p in model.parameters())
     n_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)

@@ -1,4 +1,3 @@
-# data/audio_dataset.py
 from __future__ import annotations
 
 import csv
@@ -247,7 +246,7 @@ class AudioDataset(Dataset):
         return x, int(y), meta
 
 
-# ──────────────────── noise-mixing utilities ──────────────────────────────────
+# -------------------- noise-mixing utilities ----------------------------------
 
 # Default weights for sampling noise subcategories.
 # Speech and wind are upweighted because they are the most common real-world
@@ -255,9 +254,9 @@ class AudioDataset(Dataset):
 DEFAULT_NOISE_WEIGHTS: Dict[str, float] = {
     "speech": 3.0,
     "wind": 3.0,
-    "crowd": 4.0,      # hard FP subtype — upweighted to compensate for small pool
+    "crowd": 4.0,      # hard FP subtype - upweighted to compensate for small pool
     "airplanes": 3.0,  # hard FP subtype
-    "insects": 4.0,    # hard FP subtype — spectrally close to drones
+    "insects": 4.0,    # hard FP subtype - spectrally close to drones
     "cars": 1.0,
     "electronics": 1.0,
     "motors": 1.0,
@@ -307,9 +306,9 @@ class AugmentedAudioDataset(AudioDataset):
     """AudioDataset with waveform-level augmentations for noise-robust training.
 
     Augmentations (applied only when ``augment=True``):
-      1. **Noise mixing** – overlay a random not_a_drone sample at a random SNR.
+      1. **Noise mixing** - overlay a random not_a_drone sample at a random SNR.
          Speech and wind are sampled more often (configurable weights).
-      2. **Gain jitter** – random volume perturbation in dB.
+      2. **Gain jitter** - random volume perturbation in dB.
 
     The augmentations happen *before* mel-spectrogram computation, so the model
     learns to extract drone features from noisy spectrograms.
@@ -354,7 +353,7 @@ class AugmentedAudioDataset(AudioDataset):
         fp = str(self.dataset_root / row["relpath"]) if self.dataset_root else row["filepath"]
         wav = self._load_wav(fp)
 
-        # ── waveform augmentations (training only) ──
+        # -- waveform augmentations (training only) --
         if self.augment:
             # Noise mixing: only for drone samples (don't add drone noise to no_drone)
             is_drone = row.get("binary_label") == "drone"

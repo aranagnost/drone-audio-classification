@@ -144,7 +144,7 @@ def main():
     ModelClass = getattr(model_mod, model_class_name)
     num_classes = 2 if args.task == "stage1" else 4
 
-    # 16 kHz extractor — only used to seed the parent dataset's internal sample_rate.
+    # 16 kHz extractor - only used to seed the parent dataset's internal sample_rate.
     extractor = ASTFeatureExtractor.from_pretrained("MIT/ast-finetuned-audioset-10-10-0.4593")
 
     train_ds = PaSSTAudioDataset(
@@ -194,7 +194,7 @@ def main():
             unfreeze_from = n_layers - args.unfreeze_top_n
             for name, p in model.named_parameters():
                 # Unfreeze last N transformer blocks: matches names like
-                # "backbone.net.blocks.{i}." — defensively check substring.
+                # "backbone.net.blocks.{i}." - defensively check substring.
                 for i in range(unfreeze_from, n_layers):
                     if f"blocks.{i}." in name:
                         p.requires_grad_(True)
@@ -202,10 +202,10 @@ def main():
                 # Final norm after the transformer stack
                 if name.endswith(".norm.weight") or name.endswith(".norm.bias"):
                     p.requires_grad_(True)
-            print(f"[INFO] PaSST backbone partially frozen — training last "
+            print(f"[INFO] PaSST backbone partially frozen - training last "
                   f"{args.unfreeze_top_n} blocks + norm + classifier head")
         else:
-            print("[INFO] PaSST backbone frozen — training classifier head only")
+            print("[INFO] PaSST backbone frozen - training classifier head only")
 
     n_params = sum(p.numel() for p in model.parameters())
     n_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)

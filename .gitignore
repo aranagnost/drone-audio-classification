@@ -17,6 +17,9 @@ __pycache__/
 dataset/
 datasets/
 
+# Private / local-only tools (not for publication)
+/private/
+
 # OS & IDEs
 .DS_Store
 .idea/

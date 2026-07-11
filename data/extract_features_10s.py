@@ -10,7 +10,7 @@ Stitching logic (matches scripts/segment_audio.py settings: SEG_LEN=2000 ms, STE
   - Stitch by taking the full first segment, then only the *novel* 1.5 s of
     each subsequent segment (i.e., drop the 500 ms overlap with the previous
     segment).
-  - Re-normalize the stitched recording to peak=1.0 — fixes the per-segment
+  - Re-normalize the stitched recording to peak=1.0, fixing the per-segment
     peak-normalisation discontinuities introduced at segmentation time.
 
 For every 2 s clip in the input CSV(s), we extract a 10 s window *centered*
@@ -20,13 +20,13 @@ count of the output parquet identical to the input, so the rest of the
 pipeline (train/val/test splits, XGB training, cascade eval) does not
 change.
 
-Feature set is identical to `features/extract_features.py` — same 92 columns
-and same meta columns — so it is a drop-in replacement for the XGB pipeline.
+Feature set is identical to extract_features.py (same 92 columns and same meta
+columns), so it is a drop-in replacement for the XGB pipeline.
 The only change is that the HPS/sub-band FFTs use a larger N_FFT to exploit
 the longer audio (~0.5 Hz frequency resolution vs ~8 Hz at 2 s).
 
 Usage:
-    python features/extract_features_10s.py \\
+    python data/extract_features_10s.py \\
         --train_csv data/splits_stage2/train.csv \\
         --val_csv   data/splits_stage2/val.csv \\
         --test_csv  data/splits_stage2/test.csv \\
@@ -43,7 +43,7 @@ import traceback
 import warnings
 from pathlib import Path
 
-# Disable numba JIT before librosa is imported — chroma_stft calls
+# Disable numba JIT before librosa is imported: chroma_stft calls
 # estimate_tuning() which uses numba and segfaults inside parallel workers.
 os.environ.setdefault("NUMBA_DISABLE_JIT", "1")
 
@@ -66,7 +66,7 @@ DURATION   = 10.0
 TARGET_LEN = int(TARGET_SR * DURATION)             # 160_000 samples
 
 # N_FFT choices. 2048 for frame-based features (kept from 2 s script).
-# 32768 for global HPS / sub-band energy — gives ~0.5 Hz resolution,
+# 32768 for global HPS / sub-band energy, giving ~0.5 Hz resolution,
 # useful for motor-fundamental discrimination.
 N_FFT_FRAME  = 2048
 N_FFT_GLOBAL = 32768
@@ -242,7 +242,7 @@ def _tonnetz_features(y: np.ndarray, sr: int) -> dict:
 
 
 def _hps_features(y: np.ndarray, sr: int, n_harmonics: int = 5) -> dict:
-    """Harmonic Product Spectrum — bumped to N_FFT_GLOBAL for finer resolution."""
+    """Harmonic Product Spectrum, bumped to N_FFT_GLOBAL for finer resolution."""
     from scipy.signal import find_peaks
 
     D = np.abs(np.fft.rfft(y, n=N_FFT_GLOBAL)).astype(np.float64)
@@ -362,6 +362,46 @@ def process_group(group_rows: list[dict], dataset_root: str | None) -> list[dict
         results.append(r)
 
     return results
+
+
+# ---------------------------------------------------------------------------
+# Single-file extraction (used by the live demo)
+# ---------------------------------------------------------------------------
+
+def extract_for_file(wav_path: str, feature_order: list[str] | None = None) -> np.ndarray:
+    """Extract the 92 10 s-context features for one wav file and return a
+    (1, N) float32 array ready for a tree model's ``predict_proba``.
+
+    Unlike the batch pipeline (which stitches consecutive 2 s clips to
+    reconstruct 10 s of context), the demo already provides a ~10 s window, so
+    this loads it directly at 16 kHz mono, loops it if shorter than 10 s and
+    trims if longer (mirroring ``window_around``), then peak-normalises to 1.0
+    (mirroring ``stitch_rows``) before running the identical feature set.
+    """
+    import librosa
+
+    y, _ = librosa.load(wav_path, sr=TARGET_SR, mono=True, duration=DURATION + 0.1)
+    if len(y) < TARGET_LEN:
+        n_repeats = int(np.ceil(TARGET_LEN / max(len(y), 1)))
+        y = np.tile(y, n_repeats)[:TARGET_LEN]
+    else:
+        y = y[:TARGET_LEN]
+    y = y.astype(np.float32)
+
+    peak = float(np.max(np.abs(y))) if len(y) else 0.0
+    if peak > 1e-6:
+        y = y / peak
+
+    feats = extract_all_features(y, TARGET_SR)
+
+    if feature_order is None:
+        vals = list(feats.values())
+    else:
+        vals = [float(feats.get(k, 0.0)) for k in feature_order]
+
+    X = np.asarray([vals], dtype=np.float32)
+    np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0, copy=False)
+    return X
 
 
 # ---------------------------------------------------------------------------

@@ -1,4 +1,3 @@
-# training/train_stage2.py
 """
 Consolidated stage-2 training script (motor classification).
 
@@ -69,7 +68,7 @@ def collate_with_meta(batch):
     return torch.stack(xs), torch.as_tensor(ys, dtype=torch.long), list(metas)
 
 
-# ── Weighted sampler helpers ──────────────────────────────────────────────────
+# -- Weighted sampler helpers --------------------------------------------------
 
 def make_weighted_sampler_4class(csv_path: str, min_quality: int = 1, use_quality: bool = False):
     """Class-balanced sampler for 4-class stage2."""
@@ -158,7 +157,7 @@ def make_weighted_sampler_coarse(csv_path: str, min_quality: int = 1):
     return WeightedRandomSampler(weights, num_samples=len(weights), replacement=True), counts
 
 
-# ── Training loop ─────────────────────────────────────────────────────────────
+# -- Training loop -------------------------------------------------------------
 
 def run_epoch(model, loader, optimizer=None, device="cpu",
               use_quality_loss=False, label_smoothing=0.0, spec_augment=None):
@@ -289,7 +288,7 @@ def main():
         ps = torch.cat(ps)
         cm = confusion_matrix(num_classes, ys, ps)
         mf1 = macro_f1(cm)
-        sep = "═" * 60
+        sep = "=" * 60
         print(f"\n{sep}")
         print(f"  Evaluation on : {args.test_csv}")
         print(f"  Checkpoint    : {args.out}  (min_quality>={mq})")

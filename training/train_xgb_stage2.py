@@ -1,17 +1,17 @@
 """
 Train XGBoost and LightGBM classifiers on handcrafted features for Stage B
-(4 / 6 / 8 motor classification — 3-class problem).
+(4 / 6 / 8 motor classification - 3-class problem).
 
 Usage:
-    python models/train_xgb_stage2.py \\
+    python training/train_xgb_stage2.py \\
         --features features/stage2_features.parquet \\
         --out_dir  artifacts/xgb_stage2
 
 Outputs (saved in --out_dir):
-    best_model.joblib   — best model (XGB or LGBM, whichever wins on val macroF1)
-    xgb_model.joblib    — XGBoost model
-    lgbm_model.joblib   — LightGBM model
-    feature_names.txt   — ordered list of feature names used
+    best_model.joblib   - best model (XGB or LGBM, whichever wins on val macroF1)
+    xgb_model.joblib    - XGBoost model
+    lgbm_model.joblib   - LightGBM model
+    feature_names.txt   - ordered list of feature names used
 """
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ from sklearn.preprocessing import LabelEncoder
 warnings.filterwarnings("ignore")
 
 MOTOR_LABELS  = ["4_motors", "6_motors", "8_motors"]
-LABEL_ENCODER = LabelEncoder().fit(MOTOR_LABELS)   # 4→0, 6→1, 8→2
+LABEL_ENCODER = LabelEncoder().fit(MOTOR_LABELS)   # 4->0, 6->1, 8->2
 
 META_COLS = ["filepath", "relpath", "motor_label", "binary_label",
              "quality", "youtube_url", "split"]
@@ -59,9 +59,9 @@ def prepare_split(df: pd.DataFrame, split: str, feature_cols: list[str]):
 
 def print_results(tag: str, y_true, y_pred, label_names: list[str]):
     mf1 = f1_score(y_true, y_pred, average="macro")
-    print(f"\n{'═'*60}")
+    print(f"\n{'='*60}")
     print(f"  {tag}")
-    print(f"{'═'*60}")
+    print(f"{'='*60}")
     print(f"  macroF1 : {mf1:.4f}")
     print()
     print(classification_report(y_true, y_pred, target_names=label_names, digits=4))
@@ -93,7 +93,7 @@ def train_xgboost(X_train, y_train, X_val, y_val):
     try:
         import xgboost as xgb
     except ImportError:
-        print("[WARN] xgboost not installed — skipping XGB.")
+        print("[WARN] xgboost not installed - skipping XGB.")
         return None
 
     print("\n[XGB] Training XGBoost ...")
@@ -126,7 +126,7 @@ def train_lightgbm(X_train, y_train, X_val, y_val):
     try:
         import lightgbm as lgb
     except ImportError:
-        print("[WARN] lightgbm not installed — skipping LGBM.")
+        print("[WARN] lightgbm not installed - skipping LGBM.")
         return None
 
     print("\n[LGBM] Training LightGBM ...")
@@ -171,7 +171,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── Load data ────────────────────────────────────────────────────────────
+    # -- Load data ------------------------------------------------------------
     print(f"[INFO] Loading features: {args.features}")
     df = load_features(args.features)
     feature_cols = get_feature_cols(df)
@@ -179,7 +179,7 @@ def main():
     print(f"[INFO] Splits:  {df['split'].value_counts().to_dict()}")
     print(f"[INFO] Classes: {df['motor_label'].value_counts().to_dict()}")
 
-    # ── Prepare splits (4/6/8 motors only) ──────────────────────────────────
+    # -- Prepare splits (4/6/8 motors only) ----------------------------------
     X_tr, y_tr, df_tr = prepare_split(df, "train", feature_cols)
     X_va, y_va, df_va = prepare_split(df, "val",   feature_cols)
     X_te, y_te, df_te = prepare_split(df, "test",  feature_cols)
@@ -193,33 +193,33 @@ def main():
 
     label_names = list(LABEL_ENCODER.classes_)   # ["4_motors", "6_motors", "8_motors"]
 
-    # ── Train ────────────────────────────────────────────────────────────────
+    # -- Train ----------------------------------------------------------------
     xgb_model  = train_xgboost(X_tr, y_tr, X_va, y_va)
     lgbm_model = train_lightgbm(X_tr, y_tr, X_va, y_va)
 
-    # ── Evaluate on val ──────────────────────────────────────────────────────
+    # -- Evaluate on val ------------------------------------------------------
     val_scores: dict[str, float] = {}
 
     if xgb_model is not None:
         p_va = xgb_model.predict(X_va)
-        val_scores["xgb"] = print_results("XGBoost — Val", y_va, p_va, label_names)
+        val_scores["xgb"] = print_results("XGBoost - Val", y_va, p_va, label_names)
         print_feature_importance(xgb_model, feature_cols, args.top_n_features)
 
     if lgbm_model is not None:
         p_va = lgbm_model.predict(X_va)
-        val_scores["lgbm"] = print_results("LightGBM — Val", y_va, p_va, label_names)
+        val_scores["lgbm"] = print_results("LightGBM - Val", y_va, p_va, label_names)
         print_feature_importance(lgbm_model, feature_cols, args.top_n_features)
 
-    # ── Evaluate on test ─────────────────────────────────────────────────────
+    # -- Evaluate on test -----------------------------------------------------
     if xgb_model is not None:
         p_te = xgb_model.predict(X_te)
-        print_results("XGBoost — Test", y_te, p_te, label_names)
+        print_results("XGBoost - Test", y_te, p_te, label_names)
 
     if lgbm_model is not None:
         p_te = lgbm_model.predict(X_te)
-        print_results("LightGBM — Test", y_te, p_te, label_names)
+        print_results("LightGBM - Test", y_te, p_te, label_names)
 
-    # ── Save ─────────────────────────────────────────────────────────────────
+    # -- Save -----------------------------------------------------------------
     saved_paths: dict[str, Path] = {}
 
     if xgb_model is not None:

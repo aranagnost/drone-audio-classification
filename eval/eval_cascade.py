@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """
-eval/eval_cascade_4way.py
+4-way soft cascade - adds AST v6 as a fourth signal alongside v7.
 
-4-way soft cascade — adds AST v6 as a fourth signal alongside v7.
-
-    Stage A — 2-motor gate using one of the AST models. Default = v7 (stronger
+    Stage A - 2-motor gate using one of the AST models. Default = v7 (stronger
       on 2_motors than v6). Use --gate v6 to flip.
 
-    Stage B — 4/6/8-motor decision is a weighted blend of four classifiers:
+    Stage B - 4/6/8-motor decision is a weighted blend of four classifiers:
 
         pred_probs(4,6,8) = w_v6 * AST_v6_rest
                           + w_v7 * AST_v7_rest
@@ -21,7 +19,7 @@ eval/eval_cascade_4way.py
         - XGB 2s    : 2-second handcrafted features + XGBoost.
         - LGBM 10s  : 10-second stitched handcrafted features + LightGBM.
 
-    We sweep the threshold τ on the gate model's p(2_motors) and the full
+    We sweep the threshold tau on the gate model's p(2_motors) and the full
     4-vertex weight simplex at a user-chosen step size.
 
 Usage:
@@ -75,7 +73,7 @@ def renormalize_rest(ast_probs: np.ndarray) -> np.ndarray:
 
 
 def simplex_weights_4(step: float = 0.1) -> list[tuple[float, float, float, float]]:
-    """All (w_v6, w_v7, w_2s, w_10s) ≥ 0 summing to 1 at the given step."""
+    """All (w_v6, w_v7, w_2s, w_10s) >= 0 summing to 1 at the given step."""
     n = int(round(1.0 / step))
     out = []
     for i in range(n + 1):
@@ -90,7 +88,7 @@ def simplex_weights_4(step: float = 0.1) -> list[tuple[float, float, float, floa
 def print_report(title, y_true, y_pred):
     mf1 = f1_score(y_true, y_pred, labels=ALL_LABELS,
                    average="macro", zero_division=0)
-    sep = "═" * 64
+    sep = "=" * 64
     print(f"\n{sep}\n  {title}\n{sep}")
     print(f"  macroF1: {mf1:.4f}\n")
     print(classification_report(y_true, y_pred, labels=ALL_LABELS,
@@ -119,19 +117,19 @@ def main():
     ap.add_argument("--top-k",           type=int,   default=20)
     args = ap.parse_args()
 
-    # ── Anchor ordering on the gate AST's CSV (both ASTs should have same 1594 rows) ──
+    # -- Anchor ordering on the gate AST's CSV (both ASTs should have same 1594 rows) --
     ast_gate_csv = args.ast_v7 if args.gate == "v7" else args.ast_v6
     df_gate = pd.read_csv(ast_gate_csv)
     relpaths = df_gate["relpath"].tolist()
     print(f"[INFO] {len(relpaths)} test clips (anchored on AST {args.gate})")
 
-    # ── Load everything aligned to `relpaths` ────────────────────────────────
+    # -- Load everything aligned to `relpaths` --------------------------------
     v6_probs = load_ast_preds(args.ast_v6, relpaths)
     v7_probs = load_ast_preds(args.ast_v7, relpaths)
     v6_rest  = renormalize_rest(v6_probs)
     v7_rest  = renormalize_rest(v7_probs)
 
-    # Labels (from the 2s features parquet — any of the aligned sources works)
+    # Labels (from the 2s features parquet - any of the aligned sources works)
     df_feat_2s = pd.read_parquet(args.features_2s)
     df_feat_2s = df_feat_2s[df_feat_2s["split"] == "test"].set_index("relpath")
     y_true = df_feat_2s.loc[relpaths, "motor_label"].values
@@ -146,15 +144,15 @@ def main():
         args.features_10s, args.lgbm_10s, args.feat_names_10s, relpaths)
     print(f"         model={name_10s}")
 
-    # ── Gate probs (from chosen model) ───────────────────────────────────────
+    # -- Gate probs (from chosen model) ---------------------------------------
     gate_probs   = v7_probs if args.gate == "v7" else v6_probs
     gate_argmax  = gate_probs.argmax(axis=1)
     gate_p2      = gate_probs[:, 0]
 
-    # ── Sweep ────────────────────────────────────────────────────────────────
+    # -- Sweep ----------------------------------------------------------------
     thresholds = ["argmax", 0.5, 0.6]
     quads = simplex_weights_4(args.weight_step)
-    print(f"[INFO] Sweep size: {len(thresholds)} thresholds × {len(quads)} weight quadruplets "
+    print(f"[INFO] Sweep size: {len(thresholds)} thresholds x {len(quads)} weight quadruplets "
           f"= {len(thresholds) * len(quads)} configs")
 
     results = []
@@ -182,7 +180,7 @@ def main():
     df_res = pd.DataFrame(results).sort_values("macroF1", ascending=False).reset_index(drop=True)
 
     print(f"\nTop {args.top_k} configs by test macroF1 (gate={args.gate}):\n")
-    print(f"  {'rank':>4}  {'τ':<8s}  {'w_v6':>5s}  {'w_v7':>5s}  {'w_2s':>5s}  "
+    print(f"  {'rank':>4}  {'tau':<8s}  {'w_v6':>5s}  {'w_v7':>5s}  {'w_2s':>5s}  "
           f"{'w_10s':>5s}  {'gated':>6s}  {'macroF1':>8s}")
     print("  " + "-" * 62)
     for i, row in df_res.head(args.top_k).iterrows():
@@ -190,7 +188,7 @@ def main():
               f"{row['w_2s']:>5.2f}  {row['w_10s']:>5.2f}  "
               f"{row['n_gated']:>6d}  {row['macroF1']:>8.4f}")
 
-    # ── Detailed report for winner ──────────────────────────────────────────
+    # -- Detailed report for winner ------------------------------------------
     best = df_res.iloc[0]
     tau = best["tau"]
     w_v6, w_v7, w_2s, w_10s = best["w_v6"], best["w_v7"], best["w_2s"], best["w_10s"]
@@ -200,23 +198,23 @@ def main():
                       np.array([STAGE_B_LABELS[i] for i in blend_best.argmax(axis=1)]))
 
     print_report(
-        f"BEST CONFIG  gate={args.gate}  τ={tau}  "
+        f"BEST CONFIG  gate={args.gate}  tau={tau}  "
         f"w_v6={w_v6}  w_v7={w_v7}  w_2s={w_2s}  w_10s={w_10s}",
         y_true, y_pred,
     )
 
-    # ── Summary vs all prior baselines ──────────────────────────────────────
-    print("\n" + "─" * 64)
+    # -- Summary vs all prior baselines --------------------------------------
+    print("\n" + "-" * 64)
     print("  BASELINES")
     print("  AST v6 standalone                        : 0.5446")
     print("  AST v7 standalone                        : 0.6002")
     print("  Old cascade (argmax + 2s XGB)            : 0.6005")
-    print("  2-way ensemble (v6)  τ=0.5, w=0.25       : 0.6154")
-    print("  3-way ensemble (v6)  τ=0.5, 20/60/20     : 0.6232")
-    print("  3-way ensemble (v7)  τ=0.5, 20/60/20     : 0.6510")
+    print("  2-way ensemble (v6)  tau=0.5, w=0.25       : 0.6154")
+    print("  3-way ensemble (v6)  tau=0.5, 20/60/20     : 0.6232")
+    print("  3-way ensemble (v7)  tau=0.5, 20/60/20     : 0.6510")
     print(f"  4-way ensemble best                      : {best['macroF1']:.4f}   "
-          f"(Δ vs 3-way w/v7: {best['macroF1'] - 0.6510:+.4f})")
-    print("─" * 64)
+          f"(delta vs 3-way w/v7: {best['macroF1'] - 0.6510:+.4f})")
+    print("-" * 64)
 
 
 if __name__ == "__main__":

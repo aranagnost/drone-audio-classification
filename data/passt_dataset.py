@@ -1,4 +1,4 @@
-"""PaSST dataset adapter — reuses ASTAudioDataset's stitching + group cache,
+"""PaSST dataset adapter: reuses ASTAudioDataset's stitching and group cache,
 but outputs raw 32 kHz waveform tensors (PaSST does its own mel extraction).
 
 The parent class internally works at 16 kHz (the stitched-waveform cache is
@@ -38,7 +38,7 @@ class PaSSTAudioDataset(ASTAudioDataset):
         return wav_32k.squeeze(0)             # (samples_at_32kHz,)
 
     def __getitem__(self, idx: int):
-        # Bypass the AST mel-feature cache entirely — PaSST consumes waveforms,
+        # Bypass the AST mel-feature cache entirely: PaSST consumes waveforms,
         # and resampling 10 s of audio is cheap.
         row = self.rows[idx]
         x = self._compute_features(idx)

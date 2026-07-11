@@ -9,15 +9,15 @@ Universe (5808 clips):
   - All 5645 no_drone clips from data/splits/test.csv (only place they exist).
   - The 163 drone clips that appear in BOTH data/splits/test.csv AND
     data/splits_stage2/test.csv (the URL-disjoint stage 2 test split).
-  - The 1369 stage-1-drone clips not in stage 2 test are excluded — running
+  - The 1369 stage-1-drone clips not in stage 2 test are excluded - running
     stage 2 on them would risk URL leakage with stage 2 training.
 
 Stage 1: AST v1 standalone (TTA argmax) per artifacts/ast_v1_stage1_tta_test_preds.csv.
 Stage 2: 4-way calibrated ensemble per stage2_explained.txt:
   - Per-model temperature scaling fit on val by NLL minimisation.
-  - Stage A gate: avg(AST_v7_cal[2_motors], PaSST_cal[2_motors]) > 0.5 → 2_motors.
+  - Stage A gate: avg(AST_v7_cal[2_motors], PaSST_cal[2_motors]) > 0.5 -> 2_motors.
   - Stage B blend (over {4_motors, 6_motors, 8_motors}):
-       0.0·AST_v7 + 0.9·PaSST + 0.0·XGB_2s + 0.1·LGBM_10s   → argmax.
+       0.0*AST_v7 + 0.9*PaSST + 0.0*XGB_2s + 0.1*LGBM_10s   -> argmax.
 
 Joint label space: {no_drone, 2_motors, 4_motors, 6_motors, 8_motors}.
 
@@ -136,11 +136,11 @@ def compute_stage2_ensemble(args):
     p2s_test_cal = apply_temperature(p2s_test, T_XGB)
     p10_test_cal = apply_temperature(p10_test, T_LGBM)
 
-    # Stage A gate: avg(AST, PaSST) p_2_motors > 0.5 → 2_motors
+    # Stage A gate: avg(AST, PaSST) p_2_motors > 0.5 -> 2_motors
     p2_avg = 0.5 * (ast_test_cal[:, 0] + passt_test_cal[:, 0])
     gate = p2_avg > 0.5
 
-    # Stage B blend: 0.0·AST + 0.9·PaSST + 0.0·XGB + 0.1·LGBM on {4, 6, 8}
+    # Stage B blend: 0.0*AST + 0.9*PaSST + 0.0*XGB + 0.1*LGBM on {4, 6, 8}
     # AST and PaSST need their probs renormalised over {4, 6, 8}.
     def renorm_b(p4):
         r = p4[:, 1:]
@@ -165,7 +165,7 @@ def compute_stage2_ensemble(args):
 
 
 def print_5class_report(y_true, y_pred, title):
-    sep = "═" * 64
+    sep = "=" * 64
     print(f"\n{sep}\n  {title}\n{sep}")
     mf1_all = f1_score(y_true, y_pred, labels=JOINT_LABELS, average="macro", zero_division=0)
     # Exclude classes with zero support from the macro to avoid the
@@ -202,7 +202,7 @@ def main():
     ap.add_argument("--feat-names-10s", default="artifacts/xgb_stage2_10s/feature_names.txt")
     args = ap.parse_args()
 
-    # ─── Load stage 1 predictions on the stage 1 test set ──────────────────
+    # --- Load stage 1 predictions on the stage 1 test set ------------------
     df_s1 = pd.read_csv(args.stage1_test)
     print(f"[stage 1] Loaded {len(df_s1)} predictions on stage 1 test set.")
 
@@ -218,10 +218,10 @@ def main():
     print(f"[stage 1] Standalone binary macroF1 on full stage 1 test (7177 clips): {s1_mf1:.4f}")
     print(f"[stage 1] Confusion matrix [no_drone, drone]: {s1_cm.tolist()}")
 
-    # ─── Compute stage 2 ensemble predictions on stage 2 test ──────────────
+    # --- Compute stage 2 ensemble predictions on stage 2 test --------------
     df_s2 = compute_stage2_ensemble(args)
 
-    # ─── Build the joint universe (intersection-based) ──────────────────────
+    # --- Build the joint universe (intersection-based) ----------------------
     s2_relpaths = set(df_s2["relpath"].tolist())
     s1_drones_in_s2 = df_s1[(df_s1["true_label"] == "drone") & (df_s1["relpath"].isin(s2_relpaths))]
     s1_no_drones = df_s1[df_s1["true_label"] == "no_drone"]
@@ -233,10 +233,10 @@ def main():
     print(f"[joint universe] drones in stage 1 test only (excluded): {n_drone_only_s1}")
     print(f"[joint universe] total clips: {n_no_drone + n_drone_overlap}")
 
-    # Stage 2 prediction lookup (relpath → (true_motor_label, pred_motor_label))
+    # Stage 2 prediction lookup (relpath -> (true_motor_label, pred_motor_label))
     s2_lookup = df_s2.set_index("relpath")[["true_label", "pred_label"]].to_dict("index")
 
-    # ─── Compose end-to-end predictions on the joint universe ──────────────
+    # --- Compose end-to-end predictions on the joint universe --------------
     rows = []
     # No_drone clips: final = stage 1's pred (no_drone if correct, drone if FP).
     # If stage 1 said drone, we need a stage 2 prediction. We don't have one
@@ -252,11 +252,11 @@ def main():
             rows.append({"relpath": r["relpath"], "true": "no_drone", "pred": "FP_no_stage2"})
 
     # Drone clips in the overlap: final = stage 2's pred if stage 1 said drone,
-    # else "no_drone" (stage 1 false negative — but stage 1 has zero of these
+    # else "no_drone" (stage 1 false negative - but stage 1 has zero of these
     # on test, so this branch should never trigger).
     for _, r in s1_drones_in_s2.iterrows():
         if r["pred_label"] == "no_drone":
-            # Stage 1 false negative — drone gated out
+            # Stage 1 false negative - drone gated out
             true_motor = s2_lookup[r["relpath"]]["true_label"]
             rows.append({"relpath": r["relpath"], "true": true_motor, "pred": "no_drone"})
         else:
@@ -269,10 +269,10 @@ def main():
     # a stage 2 prediction). For the published metric, distribute them across
     # motor classes uniformly (worst-case for macroF1 since it spreads errors
     # across classes), but also report the best-case lower bound (treat them
-    # as no_drone — i.e. assume stage 2 would have rejected them).
+    # as no_drone - i.e. assume stage 2 would have rejected them).
     n_fp = (df_joint["pred"] == "FP_no_stage2").sum()
     print(f"\n[end-to-end] Stage 1 false positives needing stage 2 prediction: {n_fp}")
-    print(f"             (these clips are not in stage 2 test → no stage 2 prediction)")
+    print(f"             (these clips are not in stage 2 test -> no stage 2 prediction)")
 
     if n_fp > 0:
         # Realistic bound: distribute the n_fp FPs uniformly across motor
@@ -294,7 +294,7 @@ def main():
         df_realistic = df_joint
         df_best = df_joint
 
-    # ─── Reports ────────────────────────────────────────────────────────────
+    # --- Reports ------------------------------------------------------------
     mf1_all_realistic, mf1_sup_realistic = print_5class_report(
         df_realistic["true"].values, df_realistic["pred"].values,
         title=f"END-TO-END (universe={len(df_joint)}; FPs distributed uniformly across motor classes)",
@@ -302,7 +302,7 @@ def main():
     if n_fp > 0:
         mf1_all_best, mf1_sup_best = print_5class_report(
             df_best["true"].values, df_best["pred"].values,
-            title=f"END-TO-END (FPs all → 2_motors; macroF1 upper bound)",
+            title=f"END-TO-END (FPs all -> 2_motors; macroF1 upper bound)",
         )
 
     s2_full_mf1 = f1_score(
@@ -310,20 +310,20 @@ def main():
         labels=S2_LABELS, average="macro", zero_division=0,
     )
 
-    print("\n──── Summary ────")
+    print("\n---- Summary ----")
     print(f"  Stage 1 standalone (binary, 7177 clips):                       {s1_mf1:.4f}")
     print(f"  Stage 2 standalone (4-class, 1594 drones):                     {s2_full_mf1:.4f}")
     print(f"  End-to-end (5-class, {len(df_joint)} clips, uniform FPs, all 5):     {mf1_all_realistic:.4f}")
     print(f"  End-to-end (5-class, {len(df_joint)} clips, uniform FPs, supported): {mf1_sup_realistic:.4f}")
     if n_fp > 0:
-        print(f"  End-to-end (5-class, {len(df_joint)} clips, FPs→2, all 5):          {mf1_all_best:.4f}")
-        print(f"  End-to-end (5-class, {len(df_joint)} clips, FPs→2, supported):      {mf1_sup_best:.4f}")
+        print(f"  End-to-end (5-class, {len(df_joint)} clips, FPs->2, all 5):          {mf1_all_best:.4f}")
+        print(f"  End-to-end (5-class, {len(df_joint)} clips, FPs->2, supported):      {mf1_sup_best:.4f}")
     print(
         f"\n  Caveats:\n"
-        f"  - 1369 drone clips from stage 1 test were excluded — they are not\n"
+        f"  - 1369 drone clips from stage 1 test were excluded - they are not\n"
         f"    in stage 2's URL-disjoint test split, so running stage 2 on them\n"
         f"    would risk leakage with stage 2 training. Run a real inference\n"
-        f"    pipeline (inference/pipeline.py — Step 2) for the full 7177.\n"
+        f"    pipeline (inference/pipeline.py - Step 2) for the full 7177.\n"
         f"  - The 163-drone overlap happens to contain ZERO true 6_motors\n"
         f"    clips, so F1(6_motors) is undefined and treated as 0 by the\n"
         f"    'all 5 classes' macroF1, dropping it ~0.18 vs the 'supported'\n"

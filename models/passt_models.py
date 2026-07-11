@@ -1,9 +1,8 @@
-"""PaSST classifier — patch-out fast spectrogram transformer (kkoutini).
+"""PaSST classifier: patch-out fast spectrogram transformer (kkoutini).
 
-Wraps `hear21passt.base.get_basic_model(mode="embed_only")` and adds a small
-classification head over the 768-dim PaSST embedding. Mirrors the
-ASTClassifier interface (num_classes, dropout, mlp_head) so it slots into the
-same training/inference scripts.
+Wraps hear21passt.base.get_basic_model(mode="embed_only") and adds a small
+classification head over the 768-dim PaSST embedding. Mirrors the ASTClassifier
+interface (num_classes, dropout, mlp_head) so it slots into the same scripts.
 
 Input  : (batch, samples) raw waveform at 32 kHz
 Output : (batch, num_classes) raw logits
@@ -42,7 +41,7 @@ class PaSSTClassifier(nn.Module):
     ):
         super().__init__()
         from hear21passt.base import get_basic_model
-        # mode="embed_only" returns (B, 768) — we drop PaSST's internal 527-class
+        # mode="embed_only" returns (B, 768): we drop PaSST's internal 527-class
         # head and replace it with our own num_classes head.
         self.backbone = get_basic_model(mode="embed_only")
 
@@ -65,5 +64,5 @@ class PaSSTClassifier(nn.Module):
         return self.classifier(emb)
 
 
-# Re-export for inference_app.py compatibility (matches the AST pattern)
+# Alias kept for import compatibility.
 PaSSTv1 = PaSSTClassifier
